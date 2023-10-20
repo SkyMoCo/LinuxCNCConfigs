@@ -1,0 +1,807 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<pyvcp>
+<hbox>
+<vbox>
+
+
+<labelframe text="X-AXIS SERVO">
+	<hbox>
+    <meter>
+        <halpin>"Xvel-cmd"</halpin>
+        <text>"PWM"</text>
+        <subtext>"X-AXIS"</subtext>
+        <size>135</size>
+        <min_>-10</min_>
+        <max_>10</max_>
+        <majorscale>10</majorscale>
+        <minorscale>1</minorscale>
+    </meter>
+	<vbox>
+	<rectled> 
+		<halpin>"out12"</halpin>  
+         	<height>"100"</height>
+		<width>"50"</width> 
+		<on_color>"green"</on_color> 
+		<off_color>"orange"</off_color> 
+	</rectled>
+	<label text="Brake X"/>
+	</vbox>
+	</hbox>
+</labelframe>
+
+
+<labelframe text="Y-AXIS SERVO">
+	<hbox>
+    <meter>
+        <halpin>"Yvel-cmd"</halpin>
+        <text>"PWM"</text>
+        <subtext>"Y-AXIS"</subtext>
+        <size>135</size>
+        <min_>-10</min_>
+        <max_>10</max_>
+        <majorscale>10</majorscale>
+        <minorscale>1</minorscale>
+    </meter>
+	<vbox>
+	<rectled> 
+		<halpin>"out13"</halpin>  
+         	<height>"100"</height>
+		<width>"50"</width> 
+		<on_color>"green"</on_color> 
+		<off_color>"orange"</off_color> 
+	</rectled>
+	<label text="Brake Y"/>
+	</vbox>
+	</hbox>
+</labelframe>
+
+<labelframe text="Z-AXIS SERVO">
+	<hbox>
+    <meter>
+        <halpin>"Zvel-cmd"</halpin>
+        <text>"PWM"</text>
+        <subtext>"Z-AXIS"</subtext>
+        <size>135</size>
+        <min_>-10</min_>
+        <max_>10</max_>
+        <majorscale>10</majorscale>
+        <minorscale>1</minorscale>
+    </meter>
+	<vbox>
+	<rectled> 
+		<halpin>"out06"</halpin>  
+         	<height>"50"</height>
+		<width>"50"</width> 
+		<on_color>"green"</on_color> 
+		<off_color>"orange"</off_color> 
+	</rectled>
+	<label text="Brake Z"/>
+	<rectled> 
+		<halpin>"out14"</halpin>  
+         	<height>"50"</height>
+		<width>"50"</width> 
+		<on_color>"green"</on_color> 
+		<off_color>"orange"</off_color> 
+	</rectled>
+	<label text="Brake Z"/>
+	</vbox>
+	</hbox>
+</labelframe>
+
+<labelframe text="SPINDLE">
+	<hbox>
+    <meter>
+        <halpin>"Avel-cmd"</halpin>
+        <text>"PWM"</text>
+        <subtext>"X-AXIS"</subtext>
+        <size>150</size>
+        <min_>-5000</min_>
+        <max_>5000</max_>
+        <majorscale>1000</majorscale>
+        <minorscale>100</minorscale>
+    </meter>
+	<vbox>
+	<rectled> 
+		<halpin>"out45"</halpin>  
+         	<height>"50"</height>
+		<width>"50"</width> 
+		<on_color>"green"</on_color> 
+		<off_color>"orange"</off_color> 
+	</rectled>
+	<label text="Brake S"/>	
+	<led> 
+		<halpin>"in28"</halpin>  
+		<size>"50"</size> 
+		<on_color>"yellow"</on_color> 
+		<off_color>"red"</off_color> 
+	</led>
+	<label text="Tool OK"/>
+	</vbox>
+	</hbox>
+</labelframe>
+<labelframe text="Information">
+	<hbox>
+	<vbox>
+	<label text="SERVO CONTROL by  TOM BERISHA"/> 
+					 
+	<label text="386(0)49137704  Peja KOSOVA"/>
+					 
+	</vbox>
+	</hbox>
+</labelframe>
+</vbox>
+
+	
+
+<vbox>
+
+
+
+	
+	<hbox>
+ 	<labelframe text="7i70 IN">
+	<hbox>
+				<vbox>
+					<led> 
+						<halpin>"in00"</halpin>  
+						<size>17</size>  
+						<on_color>"yellow"</on_color> 
+						<off_color>"grey"</off_color> 
+					</led>
+					<led> 
+						<halpin>"in01"</halpin>  
+						<size>17</size>  
+						<on_color>"yellow"</on_color> 
+						<off_color>"grey"</off_color> 
+					</led>
+					<led> 
+						<halpin>"in02"</halpin>  
+						<size>17</size>  
+						<on_color>"yellow"</on_color> 
+						<off_color>"grey"</off_color> 
+					</led>
+					<led> 
+						<halpin>"in03"</halpin>  
+						<size>17</size>  
+						<on_color>"yellow"</on_color> 
+						<off_color>"grey"</off_color> 
+					</led>
+					<led> 
+						<halpin>"in04"</halpin>  
+						<size>17</size>  
+						<on_color>"yellow"</on_color> 
+						<off_color>"grey"</off_color> 
+					</led>
+					<led> 
+						<halpin>"in05"</halpin>  
+						<size>17</size>  
+						<on_color>"yellow"</on_color> 
+						<off_color>"grey"</off_color> 
+					</led>
+					<led> 
+						<halpin>"in06"</halpin>  
+						<size>17</size>  
+						<on_color>"yellow"</on_color> 
+						<off_color>"grey"</off_color> 
+					</led>
+					<led> 
+						<halpin>"in07"</halpin>  
+						<size>17</size>  
+						<on_color>"yellow"</on_color> 
+						<off_color>"grey"</off_color> 
+					</led>
+					<led> 
+						<halpin>"in08"</halpin>  
+						<size>17</size>  
+						<on_color>"yellow"</on_color> 
+						<off_color>"grey"</off_color> 
+					</led>
+					<led> 
+						<halpin>"in09"</halpin>  
+						<size>17</size>  
+						<on_color>"yellow"</on_color> 
+						<off_color>"grey"</off_color> 
+					</led>
+					<led> 
+						<halpin>"in10"</halpin>  
+						<size>17</size>  
+						<on_color>"yellow"</on_color> 
+						<off_color>"grey"</off_color> 
+					</led>
+					<led> 
+						<halpin>"in11"</halpin>  
+						<size>17</size>  
+						<on_color>"yellow"</on_color> 
+						<off_color>"grey"</off_color> 
+					</led>
+					<led> 
+						<halpin>"in12"</halpin>  
+						<size>17</size>  
+						<on_color>"yellow"</on_color> 
+						<off_color>"grey"</off_color> 
+					</led>
+					<led> 
+						<halpin>"in13"</halpin>  
+						<size>17</size>  
+						<on_color>"yellow"</on_color> 
+						<off_color>"grey"</off_color> 
+					</led>
+					<led> 
+						<halpin>"in14"</halpin>  
+						<size>17</size>  
+						<on_color>"yellow"</on_color> 
+						<off_color>"grey"</off_color> 
+					</led>
+					<led> 
+						<halpin>"in15"</halpin>  
+						<size>17</size>  
+						<on_color>"yellow"</on_color> 
+						<off_color>"grey"</off_color> 
+					</led>
+					<led> 
+						<halpin>"in16"</halpin>  
+						<size>17</size>  
+						<on_color>"yellow"</on_color> 
+						<off_color>"grey"</off_color> 
+					</led>
+					<led> 
+						<halpin>"in17"</halpin>  
+						<size>17</size>  
+						<on_color>"yellow"</on_color> 
+						<off_color>"grey"</off_color> 
+					</led>
+					<led> 
+						<halpin>"in18"</halpin>  
+						<size>17</size>  
+						<on_color>"yellow"</on_color> 
+						<off_color>"grey"</off_color> 
+					</led>
+					<led> 
+						<halpin>"in19"</halpin>  
+						<size>17</size>  
+						<on_color>"yellow"</on_color> 
+						<off_color>"grey"</off_color> 
+					</led>
+					<led> 
+						<halpin>"in20"</halpin>  
+						<size>17</size>  
+						<on_color>"yellow"</on_color> 
+						<off_color>"grey"</off_color> 
+					</led>
+					<led> 
+						<halpin>"in21"</halpin>  
+						<size>17</size>  
+						<on_color>"yellow"</on_color> 
+						<off_color>"grey"</off_color> 
+					</led>
+					<led> 
+						<halpin>"in22"</halpin>  
+						<size>17</size>  
+						<on_color>"yellow"</on_color> 
+						<off_color>"grey"</off_color> 
+					</led>
+					<led> 
+						<halpin>"in23"</halpin>  
+						<size>17</size>  
+						<on_color>"yellow"</on_color> 
+						<off_color>"grey"</off_color> 
+					</led>
+					<led> 
+						<halpin>"in24"</halpin>  
+						<size>17</size>  
+						<on_color>"yellow"</on_color> 
+						<off_color>"grey"</off_color> 
+					</led>
+					<led> 
+						<halpin>"in25"</halpin>  
+						<size>17</size>  
+						<on_color>"yellow"</on_color> 
+						<off_color>"grey"</off_color> 
+					</led>
+					<led> 
+						<halpin>"in26"</halpin>  
+						<size>17</size>  
+						<on_color>"yellow"</on_color> 
+						<off_color>"grey"</off_color> 
+					</led>
+					<led> 
+						<halpin>"in27"</halpin>  
+						<size>17</size>  
+						<on_color>"yellow"</on_color> 
+						<off_color>"grey"</off_color> 
+					</led>
+					
+					<led> 
+						<halpin>"in29"</halpin>  
+						<size>17</size>  
+						<on_color>"yellow"</on_color> 
+						<off_color>"grey"</off_color> 
+					</led>
+					<led> 
+						<halpin>"in30"</halpin>  
+						<size>17</size>  
+						<on_color>"yellow"</on_color> 
+						<off_color>"grey"</off_color> 
+					</led>
+					<led> 
+						<halpin>"in31"</halpin>  
+						<size>17</size>  
+						<on_color>"yellow"</on_color> 
+						<off_color>"grey"</off_color> 
+					</led>
+					<led> 
+						<halpin>"in32"</halpin>  
+						<size>17</size>  
+						<on_color>"yellow"</on_color> 
+						<off_color>"grey"</off_color> 
+					</led>
+					<led> 
+						<halpin>"in33"</halpin>  
+						<size>17</size>  
+						<on_color>"yellow"</on_color> 
+						<off_color>"grey"</off_color> 
+					</led>
+					<led> 
+						<halpin>"in34"</halpin>  
+						<size>17</size>  
+						<on_color>"yellow"</on_color> 
+						<off_color>"grey"</off_color> 
+					</led>
+					<led> 
+						<halpin>"in35"</halpin>  
+						<size>17</size>  
+						<on_color>"yellow"</on_color> 
+						<off_color>"grey"</off_color> 
+					</led>
+					<led> 
+						<halpin>"in36"</halpin>  
+						<size>17</size>  
+						<on_color>"yellow"</on_color> 
+						<off_color>"grey"</off_color> 
+					</led>
+					<led> 
+						<halpin>"in37"</halpin>  
+						<size>17</size>  
+						<on_color>"yellow"</on_color> 
+						<off_color>"grey"</off_color> 
+					</led>
+					<led> 
+						<halpin>"in38"</halpin>  
+						<size>17</size>  
+						<on_color>"yellow"</on_color> 
+						<off_color>"grey"</off_color> 
+					</led>
+					<led> 
+						<halpin>"in39"</halpin>  
+						<size>17</size>  
+						<on_color>"yellow"</on_color> 
+						<off_color>"grey"</off_color> 
+					</led>
+					<led> 
+						<halpin>"in40"</halpin>  
+						<size>17</size>  
+						<on_color>"yellow"</on_color> 
+						<off_color>"grey"</off_color> 
+					</led>
+					<led> 
+						<halpin>"in41"</halpin>  
+						<size>17</size>  
+						<on_color>"yellow"</on_color> 
+						<off_color>"grey"</off_color> 
+					</led>
+					<led> 
+						<halpin>"in42"</halpin>  
+						<size>17</size>  
+						<on_color>"yellow"</on_color> 
+						<off_color>"grey"</off_color> 
+					</led>
+					<led> 
+						<halpin>"in43"</halpin>  
+						<size>17</size>  
+						<on_color>"yellow"</on_color> 
+						<off_color>"grey"</off_color> 
+					</led>
+					<led> 
+						<halpin>"in44"</halpin>  
+						<size>17</size>  
+						<on_color>"yellow"</on_color> 
+						<off_color>"grey"</off_color> 
+					</led>
+					<led> 
+						<halpin>"in45"</halpin>  
+						<size>17</size>  
+						<on_color>"yellow"</on_color> 
+						<off_color>"grey"</off_color> 
+					</led>
+					<led> 
+						<halpin>"in46"</halpin>  
+						<size>17</size>  
+						<on_color>"yellow"</on_color> 
+						<off_color>"grey"</off_color> 
+					</led>
+					<led> 
+						<halpin>"in47"</halpin>  
+						<size>17</size>  
+						<on_color>"yellow"</on_color> 
+						<off_color>"grey"</off_color> 
+					</led>
+				</vbox>
+	
+				<vbox>
+					<label text="IN 00"/> 
+					<label text="IN 01"/>
+					<label text="IN 02"/> 
+					<label text="IN 03"/> 
+					<label text="IN 04"/> 
+					<label text="IN 05"/> 
+					<label text="IN 06"/> 
+					<label text="IN 07"/> 
+					<label text="IN 08"/> 
+					<label text="IN 09"/> 
+					<label text="IN 10"/> 
+					<label text="IN 11"/> 
+					<label text="IN 12"/> 
+					<label text="IN 13"/> 
+					<label text="IN 14"/> 
+					<label text="IN 15"/> 
+					<label text="IN 16"/> 
+					<label text="IN 17"/> 
+					<label text="IN 18"/> 
+					<label text="IN 19"/> 
+					<label text="IN 20"/> 
+					<label text="IN 21"/> 
+					<label text="IN 22"/> 
+					<label text="IN 23"/> 
+					<label text="IN 24"/> 
+					<label text="IN 25"/> 
+					<label text="IN 26"/> 
+					<label text="IN 27"/> 
+
+					<label text="IN 29"/> 
+					<label text="IN 32"/> 
+					<label text="IN 31"/> 
+					<label text="IN 32"/> 
+					<label text="IN 33"/> 
+					<label text="IN 34"/> 
+					<label text="IN 35"/> 
+					<label text="IN 36"/> 
+					<label text="IN 37"/> 
+					<label text="IN 38"/> 
+					<label text="IN 39"/> 
+					<label text="IN 40"/> 
+					<label text="IN 41"/> 
+					<label text="IN 42"/> 
+					<label text="IN 43"/> 
+					<label text="IN 44"/> 
+					<label text="IN 45"/> 
+					<label text="IN 46"/> 
+					<label text="IN 47"/> 
+					
+				</vbox>
+	</hbox>
+	</labelframe>
+	</hbox>
+	</vbox>
+
+	<vbox>
+	<hbox>
+ 	<labelframe text="7i71 OUT">
+	<hbox>
+
+
+				<vbox>
+					<led> 
+						<halpin>"out00"</halpin>  
+						<size>17</size>  
+						<on_color>"yellow"</on_color> 
+						<off_color>"grey"</off_color> 
+					</led>
+					<led> 
+						<halpin>"out01"</halpin>  
+						<size>17</size>  
+						<on_color>"yellow"</on_color> 
+						<off_color>"grey"</off_color> 
+					</led>
+					<led> 
+						<halpin>"out02"</halpin>  
+						<size>17</size>  
+						<on_color>"yellow"</on_color> 
+						<off_color>"grey"</off_color> 
+					</led>
+					<led> 
+						<halpin>"out03"</halpin>  
+						<size>17</size>  
+						<on_color>"yellow"</on_color> 
+						<off_color>"grey"</off_color> 
+					</led>
+					
+					<led> 
+						<halpin>"out05"</halpin>  
+						<size>17</size>  
+						<on_color>"yellow"</on_color> 
+						<off_color>"grey"</off_color> 
+					</led>
+					
+					<led> 
+						<halpin>"out07"</halpin>  
+						<size>17</size>  
+						<on_color>"yellow"</on_color> 
+						<off_color>"grey"</off_color> 
+					</led>
+					<led> 
+						<halpin>"out08"</halpin>  
+						<size>17</size>  
+						<on_color>"yellow"</on_color> 
+						<off_color>"grey"</off_color> 
+					</led>
+					<led> 
+						<halpin>"out09"</halpin>  
+						<size>17</size>  
+						<on_color>"yellow"</on_color> 
+						<off_color>"grey"</off_color> 
+					</led>
+					<led> 
+						<halpin>"out10"</halpin>  
+						<size>17</size>  
+						<on_color>"yellow"</on_color> 
+						<off_color>"grey"</off_color> 
+					</led>
+					<led> 
+						<halpin>"out11"</halpin>  
+						<size>17</size>  
+						<on_color>"yellow"</on_color> 
+						<off_color>"grey"</off_color> 
+					</led>
+					
+					<led> 
+						<halpin>"out15"</halpin>  
+						<size>17</size>  
+						<on_color>"yellow"</on_color> 
+						<off_color>"grey"</off_color> 
+					</led>
+					<led> 
+						<halpin>"out16"</halpin>  
+						<size>17</size>  
+						<on_color>"yellow"</on_color> 
+						<off_color>"grey"</off_color> 
+					</led>
+					<led> 
+						<halpin>"out17"</halpin>  
+						<size>17</size>  
+						<on_color>"yellow"</on_color> 
+						<off_color>"grey"</off_color> 
+					</led>
+					<led> 
+						<halpin>"out18"</halpin>  
+						<size>17</size>  
+						<on_color>"yellow"</on_color> 
+						<off_color>"grey"</off_color> 
+					</led>
+					<led> 
+						<halpin>"out19"</halpin>  
+						<size>17</size>  
+						<on_color>"yellow"</on_color> 
+						<off_color>"grey"</off_color> 
+					</led>
+					<led> 
+						<halpin>"out20"</halpin>  
+						<size>17</size>  
+						<on_color>"yellow"</on_color> 
+						<off_color>"grey"</off_color> 
+					</led>
+					<led> 
+						<halpin>"out21"</halpin>  
+						<size>17</size>  
+						<on_color>"yellow"</on_color> 
+						<off_color>"grey"</off_color> 
+					</led>
+					<led> 
+						<halpin>"out22"</halpin>  
+						<size>17</size>  
+						<on_color>"yellow"</on_color> 
+						<off_color>"grey"</off_color> 
+					</led>
+					<led> 
+						<halpin>"out23"</halpin>  
+						<size>17</size>  
+						<on_color>"yellow"</on_color> 
+						<off_color>"grey"</off_color> 
+					</led>
+					<led> 
+						<halpin>"out24"</halpin>  
+						<size>17</size>  
+						<on_color>"yellow"</on_color> 
+						<off_color>"grey"</off_color> 
+					</led>
+					<led> 
+						<halpin>"out25"</halpin>  
+						<size>17</size>  
+						<on_color>"yellow"</on_color> 
+						<off_color>"grey"</off_color> 
+					</led>
+					<led> 
+						<halpin>"out26"</halpin>  
+						<size>17</size>  
+						<on_color>"yellow"</on_color> 
+						<off_color>"grey"</off_color> 
+					</led>
+					<led> 
+						<halpin>"out27"</halpin>  
+						<size>17</size>  
+						<on_color>"yellow"</on_color> 
+						<off_color>"grey"</off_color> 
+					</led>
+					<led> 
+						<halpin>"out28"</halpin>  
+						<size>17</size>  
+						<on_color>"yellow"</on_color> 
+						<off_color>"grey"</off_color> 
+					</led>
+					<led> 
+						<halpin>"out29"</halpin>  
+						<size>17</size>  
+						<on_color>"yellow"</on_color> 
+						<off_color>"grey"</off_color> 
+					</led>
+					<led> 
+						<halpin>"out30"</halpin>  
+						<size>17</size>  
+						<on_color>"yellow"</on_color> 
+						<off_color>"grey"</off_color> 
+					</led>
+					<led> 
+						<halpin>"out31"</halpin>  
+						<size>17</size>  
+						<on_color>"yellow"</on_color> 
+						<off_color>"grey"</off_color> 
+					</led>
+					<led> 
+						<halpin>"out32"</halpin>  
+						<size>17</size>  
+						<on_color>"yellow"</on_color> 
+						<off_color>"grey"</off_color> 
+					</led>
+					<led> 
+						<halpin>"out33"</halpin>  
+						<size>17</size>  
+						<on_color>"yellow"</on_color> 
+						<off_color>"grey"</off_color> 
+					</led>
+					<led> 
+						<halpin>"out34"</halpin>  
+						<size>17</size>  
+						<on_color>"yellow"</on_color> 
+						<off_color>"grey"</off_color> 
+					</led>
+					<led> 
+						<halpin>"out35"</halpin>  
+						<size>17</size>  
+						<on_color>"yellow"</on_color> 
+						<off_color>"grey"</off_color> 
+					</led>
+					<led> 
+						<halpin>"out36"</halpin>  
+						<size>17</size>  
+						<on_color>"yellow"</on_color> 
+						<off_color>"grey"</off_color> 
+					</led>
+					<led> 
+						<halpin>"out37"</halpin>  
+						<size>17</size>  
+						<on_color>"yellow"</on_color> 
+						<off_color>"grey"</off_color> 
+					</led>
+					<led> 
+						<halpin>"out38"</halpin>  
+						<size>17</size>  
+						<on_color>"yellow"</on_color> 
+						<off_color>"grey"</off_color> 
+					</led>
+					<led> 
+						<halpin>"out39"</halpin>  
+						<size>17</size>  
+						<on_color>"yellow"</on_color> 
+						<off_color>"grey"</off_color> 
+					</led>
+					<led> 
+						<halpin>"out40"</halpin>  
+						<size>17</size>  
+						<on_color>"yellow"</on_color> 
+						<off_color>"grey"</off_color> 
+					</led>
+					<led> 
+						<halpin>"out41"</halpin>  
+						<size>17</size>  
+						<on_color>"yellow"</on_color> 
+						<off_color>"grey"</off_color> 
+					</led>
+					<led> 
+						<halpin>"out42"</halpin>  
+						<size>17</size>  
+						<on_color>"yellow"</on_color> 
+						<off_color>"grey"</off_color> 
+					</led>
+					<led> 
+						<halpin>"out43"</halpin>  
+						<size>17</size>  
+						<on_color>"yellow"</on_color> 
+						<off_color>"grey"</off_color> 
+					</led>
+					<led> 
+						<halpin>"out44"</halpin>  
+						<size>17</size>  
+						<on_color>"yellow"</on_color> 
+						<off_color>"grey"</off_color> 
+					</led>
+					
+					<led> 
+						<halpin>"out46"</halpin>  
+						<size>17</size>  
+						<on_color>"yellow"</on_color> 
+						<off_color>"grey"</off_color> 
+					</led>
+					<led> 
+						<halpin>"out47"</halpin>  
+						<size>17</size>  
+						<on_color>"yellow"</on_color> 
+						<off_color>"grey"</off_color> 
+					</led>
+				</vbox>
+	
+				<vbox>
+					<label text="OUT 00"/> 
+					<label text="OUT 01"/>
+					<label text="OUT 02"/> 
+					<label text="OUT 03"/> 
+
+					<label text="OUT 05"/> 
+
+					<label text="OUT 07"/> 
+					<label text="OUT 08"/> 
+					<label text="OUT 09"/> 
+					<label text="OUT 10"/> 
+					<label text="OUT 11"/> 
+
+
+
+					<label text="OUT 15"/> 
+					<label text="OUT 16"/> 
+					<label text="OUT 17"/> 
+					<label text="OUT 18"/> 
+					<label text="OUT 19"/> 
+					<label text="OUT 20"/> 
+					<label text="OUT 21"/> 
+					<label text="OUT 22"/> 
+					<label text="OUT 23"/> 
+					<label text="OUT 24"/> 
+					<label text="OUT 25"/> 
+					<label text="OUT 26"/> 
+					<label text="OUT 27"/> 
+					<label text="OUT 28"/> 
+					<label text="OUT 29"/> 
+					<label text="OUT 32"/> 
+					<label text="OUT 31"/> 
+					<label text="OUT 32"/> 
+					<label text="OUT 33"/> 
+					<label text="OUT 34"/> 
+					<label text="OUT 35"/> 
+					<label text="OUT 36"/> 
+					<label text="OUT 37"/> 
+					<label text="OUT 38"/> 
+					<label text="OUT 39"/> 
+					<label text="OUT 40"/> 
+					<label text="OUT 41"/> 
+					<label text="OUT 42"/> 
+					<label text="OUT 43"/> 
+					<label text="OUT 44"/> 
+
+					<label text="OUT 46"/> 
+					<label text="OUT 47"/> 
+					
+				</vbox>
+	</hbox>
+	</labelframe>
+	</hbox>
+	</vbox>
+</hbox>
+</pyvcp>

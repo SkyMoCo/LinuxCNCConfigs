@@ -1,0 +1,123 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<pyvcp>
+  <hbox>
+    <vbox>
+      <labelframe text="X-AXIS SERVO">
+	<hbox>
+	  <meter>
+            <halpin>"Xvel-cmd"</halpin>
+            <text>"PWM"</text>
+            <subtext>"X-AXIS"</subtext>
+            <size>135</size>
+            <min_>-10</min_>
+            <max_>10</max_>
+            <majorscale>10</majorscale>
+            <minorscale>1</minorscale>
+	  </meter>
+	  <vbox>
+	    <rectled> 
+	      <halpin>"out12"</halpin>  
+              <height>"100"</height>
+	      <width>"50"</width> 
+	      <on_color>"green"</on_color> 
+	      <off_color>"orange"</off_color> 
+	    </rectled>
+	    <label text="Brake X"/>
+	  </vbox>
+	</hbox>
+      </labelframe>
+      <labelframe text="Y-AXIS SERVO">
+	<hbox>
+	  <meter>
+            <halpin>"Yvel-cmd"</halpin>
+            <text>"PWM"</text>
+            <subtext>"Y-AXIS"</subtext>
+            <size>135</size>
+            <min_>-10</min_>
+            <max_>10</max_>
+            <majorscale>10</majorscale>
+            <minorscale>1</minorscale>
+	  </meter>
+	  <vbox>
+	    <rectled> 
+	      <halpin>"out13"</halpin>  
+              <height>"100"</height>
+	      <width>"50"</width> 
+	      <on_color>"green"</on_color> 
+	      <off_color>"orange"</off_color> 
+	    </rectled>
+	    <label text="Brake Y"/>
+	  </vbox>
+	</hbox>
+      </labelframe>
+      <labelframe text="Z-AXIS SERVO">
+	<hbox>
+	  <meter>
+            <halpin>"Zvel-cmd"</halpin>
+            <text>"PWM"</text>
+            <subtext>"Z-AXIS"</subtext>
+            <size>135</size>
+            <min_>-10</min_>
+            <max_>10</max_>
+            <majorscale>10</majorscale>
+            <minorscale>1</minorscale>
+	  </meter>
+	</hbox>
+      </labelframe>
+    </vbox>
+    <vbox>
+      <hbox>
+	<labelframe text="7i77 IN">
+	  <hbox>
+	    <vbox>
+	      <led> 
+		<halpin>"in00"</halpin>  
+		<size>17</size>  
+		<on_color>"yellow"</on_color> 
+		<off_color>"grey"</off_color> 
+	      </led>
+	      <led> 
+		<halpin>"in01"</halpin>  
+		<size>17</size>  
+		<on_color>"yellow"</on_color> 
+		<off_color>"grey"</off_color> 
+	      </led>
+	      <led> 
+		<halpin>"in02"</halpin>  
+		<size>17</size>  
+		<on_color>"yellow"</on_color> 
+		<off_color>"grey"</off_color> 
+	      </led>
+	      <led> 
+		<halpin>"in03"</halpin>  
+		<size>17</size>  
+		<on_color>"yellow"</on_color> 
+		<off_color>"grey"</off_color> 
+	      </led>
+	      <led> 
+		<halpin>"in04"</halpin>  
+		<size>17</size>  
+		<on_color>"yellow"</on_color> 
+		<off_color>"grey"</off_color> 
+	      </led>
+	      <led> 
+		<halpin>"in05"</halpin>  
+		<size>17</size>  
+		<on_color>"yellow"</on_color> 
+		<off_color>"grey"</off_color> 
+	      </led>
+	    </vbox>
+	    <vbox>
+	      <label text="IN 00"/> 
+	      <label text="IN 01"/>
+	      <label text="IN 02"/> 
+	      <label text="IN 03"/> 
+	      <label text="IN 04"/> 
+	      <label text="IN 05"/> 
+	    </vbox>
+	  </hbox>
+	</labelframe>
+      </hbox>
+    </vbox>
+  </hbox>
+</pyvcp>
