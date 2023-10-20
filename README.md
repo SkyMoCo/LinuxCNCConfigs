@@ -1,8 +1,8 @@
 # LinuxCNCConfigs
 LinuxCNC Configurations for various systems
 
-#  These configs are symlinked for the various systems,  
-for example
+#  These configs are symlinked to linuxcnc/configs depending on the system  
+## for example
 ```
 cd ~
 git clone git@github.com:SkyMoCo/LinuxCNCConfigs.git
