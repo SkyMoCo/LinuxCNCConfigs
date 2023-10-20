@@ -23,6 +23,8 @@ addf hm2_7i92.0.write         servo-thread
 
 
 # external input signals
+# --- HOME-X ---
+net home-x     <=  hm2_7i92.0.7i77.0.0.input-00
 
 
 #*******************

@@ -14,16 +14,6 @@
             <majorscale>10</majorscale>
             <minorscale>1</minorscale>
 	  </meter>
-	  <vbox>
-	    <rectled> 
-	      <halpin>"out12"</halpin>  
-              <height>"100"</height>
-	      <width>"50"</width> 
-	      <on_color>"green"</on_color> 
-	      <off_color>"orange"</off_color> 
-	    </rectled>
-	    <label text="Brake X"/>
-	  </vbox>
 	</hbox>
       </labelframe>
       <labelframe text="Y-AXIS SERVO">
@@ -38,16 +28,6 @@
             <majorscale>10</majorscale>
             <minorscale>1</minorscale>
 	  </meter>
-	  <vbox>
-	    <rectled> 
-	      <halpin>"out13"</halpin>  
-              <height>"100"</height>
-	      <width>"50"</width> 
-	      <on_color>"green"</on_color> 
-	      <off_color>"orange"</off_color> 
-	    </rectled>
-	    <label text="Brake Y"/>
-	  </vbox>
 	</hbox>
       </labelframe>
       <labelframe text="Z-AXIS SERVO">
@@ -64,8 +44,6 @@
 	  </meter>
 	</hbox>
       </labelframe>
-    </vbox>
-    <vbox>
       <hbox>
 	<labelframe text="7i77 IN">
 	  <hbox>
@@ -108,12 +86,12 @@
 	      </led>
 	    </vbox>
 	    <vbox>
-	      <label text="IN 00"/> 
-	      <label text="IN 01"/>
-	      <label text="IN 02"/> 
-	      <label text="IN 03"/> 
-	      <label text="IN 04"/> 
-	      <label text="IN 05"/> 
+	      <label text="X Home "/> 
+	      <label text="X Limit"/>
+	      <label text="Y Home "/> 
+	      <label text="Y Limit"/> 
+	      <label text="Z Home "/> 
+	      <label text="Z Limit"/> 
 	    </vbox>
 	  </hbox>
 	</labelframe>
