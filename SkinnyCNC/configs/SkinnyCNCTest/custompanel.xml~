@@ -1,0 +1,56 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<pyvcp>
+ 
+  <hbox>
+    <relief>RAISED</relief>
+    <bd>5</bd>			
+    <button> 
+      <halpin>"rapid-to-home"</halpin>
+      <text>"Home 0, 0, .5"</text>
+      <font>('Fixed',14)</font>
+      <width>10</width>
+    </button>
+  </hbox>
+
+  <hbox>
+    <relief>RAISED</relief>
+    <bd>5</bd>			
+    <button> 
+      <halpin>"laserzero"</halpin>
+      <text>"Z Touch Plate"</text>
+      <font>('Fixed',14)</font>
+      <width>10</width>
+    </button>
+  </hbox>
+  <!-- KDS adding a cycle timer. Also see changes in custom_postgui.hal -->
+  <hbox>
+    <label>
+      <text>"Time"</text>
+      <font>("Helvetica",14)</font>
+    </label>
+    <u32>
+      <halpin>"time-hours"</halpin>
+      <font>("Helvetica",14)</font>
+      <format>"2d"</format>
+    </u32>
+    <label>
+      <text>":"</text>
+      <font>("Helvetica",14)</font>
+    </label>
+    <u32>
+      <halpin>"time-minutes"</halpin>
+      <font>("Helvetica",14)</font>
+      <format>"2d"</format>
+    </u32>
+    <label>
+      <text>":"</text>
+      <font>("Helvetica",14)</font>
+    </label>
+    <u32>
+      <halpin>"time-seconds"</halpin>
+      <font>("Helvetica",14)</font>
+      <format>"2d"</format>
+    </u32>
+  </hbox>
+  <!-- end cycle timer --> 
+</pyvcp>

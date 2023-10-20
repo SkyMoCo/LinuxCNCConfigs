@@ -1,0 +1,4 @@
+T1 P1 ;referance tool 
+T2 P2 D0.125000 Z-1.844918 ;1/8 flat upcut router bit 
+T3 P3 D0.250000 ;1/4 flat plastic router bit 
+T4 P4 D0.500000 Z-2.113207 ;1/2 vcarve 90 degrees 

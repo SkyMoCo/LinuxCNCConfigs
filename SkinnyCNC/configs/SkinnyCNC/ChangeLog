@@ -1,0 +1,8 @@
+2023-02-23  Kevin Smolkowski  <kevins@skinnycnc.smokewood.dev>
+
+	* Setup vfdmod
+	Modfied SkinnyCNC.ini to remove rapid-to-home
+	Added custom.hal
+	Modified custompanel.xml to add vfdmod panel
+	Modified pyvcp-panel.xml to add results of vfdmod --postgui
+	

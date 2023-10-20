@@ -1,0 +1,70 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<pyvcp>
+  <!-- KDS adding a cycle timer. Also see changes in custom_postgui.hal -->
+  <hbox>
+    <label>
+      <text>"CycleTime"</text>
+      <font>("Helvetica",14)</font>
+    </label>
+    <u32>
+      <halpin>"time-hours"</halpin>
+      <font>("Helvetica",14)</font>
+      <format>"2d"</format>
+    </u32>
+    <label>
+      <text>":"</text>
+      <font>("Helvetica",14)</font>
+    </label>
+    <u32>
+      <halpin>"time-minutes"</halpin>
+      <font>("Helvetica",14)</font>
+      <format>"2d"</format>
+    </u32>
+    <label>
+      <text>":"</text>
+      <font>("Helvetica",14)</font>
+    </label>
+    <u32>
+      <halpin>"time-seconds"</halpin>
+      <font>("Helvetica",14)</font>
+      <format>"2d"</format>
+    </u32>
+  </hbox>
+    <!-- KDS ProbeLED. Also see changes in custom_postgui.hal -->
+  <hbox>
+    <relief>FLAT</relief>
+    <bd>10</bd>
+    <label>
+      <text>"    Probe State  "</text>
+    </label>
+    <led>
+      <halpin>"probe-led"</halpin>
+      <on_color>"blue"</on_color>
+      <off_color>"gray"</off_color>
+      <size>15</size>
+      <pady>50</pady>
+    </led>
+  </hbox> 
+  <hbox>
+    <relief>RAISED</relief>
+    <bd>5</bd>			
+    <button> 
+      <halpin>"rapid-to-home"</halpin>
+      <text>"Load Tool 2\n1/8 Bit"</text>
+      <font>('Helvetica',12)</font>
+      <width>15</width>
+    </button>
+  </hbox>
+
+  <hbox>
+    <relief>RAISED</relief>
+    <bd>5</bd>			
+    <button> 
+      <halpin>"laserzero"</halpin>
+      <text>"Z Touch Plate"</text>
+      <font>('Fixed',14)</font>
+      <width>12</width>
+    </button>
+  </hbox>
+  <!-- end cycle timer --> 
+</pyvcp>

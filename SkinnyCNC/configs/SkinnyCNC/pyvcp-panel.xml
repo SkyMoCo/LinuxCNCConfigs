@@ -1,0 +1,81 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<pyvcp>
+  <!-- KDS adding a cycle timer. Also see changes in custom_postgui.hal -->
+  <hbox>
+    <label>
+      <text>"CycleTime"</text>
+      <font>("Helvetica",14)</font>
+    </label>
+    <u32>
+      <halpin>"time-hours"</halpin>
+      <font>("Helvetica",14)</font>
+      <format>"2d"</format>
+    </u32>
+    <label>
+      <text>":"</text>
+      <font>("Helvetica",14)</font>
+    </label>
+    <u32>
+      <halpin>"time-minutes"</halpin>
+      <font>("Helvetica",14)</font>
+      <format>"2d"</format>
+    </u32>
+    <label>
+      <text>":"</text>
+      <font>("Helvetica",14)</font>
+    </label>
+    <u32>
+      <halpin>"time-seconds"</halpin>
+      <font>("Helvetica",14)</font>
+      <format>"2d"</format>
+    </u32>
+  </hbox>    <!-- end cycle timer --> 
+
+  <hbox>     <!-- KDS ProbeLED. Also see changes in custom_postgui.hal -->
+    <relief>FLAT</relief>
+    <bd>10</bd>
+    <label>
+      <text>"    Probe State  "</text>
+    </label>
+    <led>
+      <halpin>"probe-led"</halpin>
+      <on_color>"blue"</on_color>
+      <off_color>"gray"</off_color>
+      <size>15</size>
+      <pady>50</pady>
+    </led>
+  </hbox> 
+
+  <labelframe text="mb2hal">
+
+    <label text="Output RPM:"/>
+    <bar halpin="rpm-out" max_="24000"/>
+
+    <table flexible_rows="[1]" flexible_columns="[2]">
+    <tablerow/>
+        <label text="Spindle at speed"/>
+        <led halpin="at-speed" size="12" on_color="green" off_color="red"/>
+    <tablerow/>
+        <label text="'\nParameters:'"/>
+
+    <!-- User parameters start here -->
+    <!-- User parameters end -->
+
+    <tablerow/>
+        <label text="'\nRS485:'"/>
+    <tablerow/>
+        <label text="Is connected"/>
+        <led halpin="is-connected" size="12" on_color="green" off_color="red"/>
+    <tablerow/>
+        <label text="Error count"/>
+        <s32 halpin="error-count"/>
+    <tablerow/>
+        <label text="Last error"/>
+        <s32 halpin="last-error"/>
+    </table>
+
+</labelframe>
+
+
+  
+</pyvcp>

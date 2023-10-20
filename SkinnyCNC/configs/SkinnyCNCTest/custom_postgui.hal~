@@ -1,0 +1,29 @@
+# Include your custom_postgui HAL commands here
+# This file will not be overwritten when you run PNCconf again
+
+# Add LED for probe
+net probe-in => pyvcp.probe-led
+
+# set up the rapid to home button, also need HALUI settings
+## Add to [HALUI] section in ini
+## MDI_COMMAND = O <go_home> CALL
+net remote-rapid-to-home halui.mdi-command-00 <= pyvcp.rapid-to-home
+
+# Setup button to change to tool 4
+net remote-tool-change-4 halui.mdi-command-01 <= pyvcp.remote-tool-change-4
+# set up the touch plate button
+## Add to [HALUI] section in ini
+##MDI_COMMAND = O <smw_touch_plate> CALL
+net remote-laserzero halui.mdi-command-02 <= pyvcp.laserzero
+
+loadrt time
+loadrt not
+addf time.0 servo-thread
+addf not.0 servo-thread
+net prog-running not.0.in <= halui.program.is-idle
+net cycle-timer time.0.start <= not.0.out
+net cycle-seconds pyvcp.time-seconds <= time.0.seconds
+net cycle-minutes pyvcp.time-minutes <= time.0.minutes
+net cycle-hours pyvcp.time-hours <= time.0.hours
+
+
