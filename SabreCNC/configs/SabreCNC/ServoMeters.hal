@@ -1,0 +1,4 @@
+net x-output => pyvcp.Xvel-cmd
+net y-output => pyvcp.Yvel-cmd
+net z-output => pyvcp.Zvel-cmd
+net home-x =>   pyvcp.in00

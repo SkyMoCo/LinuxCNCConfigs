@@ -1,0 +1,4 @@
+net joint.0.output => pyvcp.Xvel-cmd
+net joint.1.output => pyvcp.Yvel-cmd
+net joint.2.output => pyvcp.Zvel-cmd
+net home-x =>   pyvcp.in00

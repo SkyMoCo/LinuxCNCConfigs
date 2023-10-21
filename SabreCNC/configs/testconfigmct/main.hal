@@ -1,4 +1,4 @@
-# This file was created with the Mesa Configuration Tool on Oct 19 2023 20:52:50
+# This file was created with the Mesa Configuration Tool on Oct 20 2023 12:05:11
 # If you make changes to this file DO NOT run the configuration tool again!
 # This file will be replaced with a new file if you do!
 
@@ -27,10 +27,10 @@ addf hm2_[MESA](BOARD).0.write servo-thread
 
 # DPLL TIMER
 setp hm2_[MESA](BOARD).0.dpll.01.timer-us -50
-setp hm2_[MESA](BOARD).0.stepgen.timer-number 1
 
 # amp enable
-net joint-0-enable motion.motion-enabled => hm2_[MESA](BOARD).0.7i77.0.1.analogena
+net motion-enable <= motion.motion-enabled
+net motion-enable => hm2_[MESA](BOARD).0.7i77.0.1.analogena
 
 # Joint 0 Axis X
 # PID Setup
@@ -43,13 +43,26 @@ setp pid.x.FF1 [JOINT_0](FF1)
 setp pid.x.FF2 [JOINT_0](FF2)
 setp pid.x.deadband [JOINT_0](DEADBAND)
 setp pid.x.maxoutput [JOINT_0](MAX_OUTPUT)
-setp pid.x.maxerror [JOINT_0](MAX_ERROR)
 setp pid.x.error-previous-target true
 
 # joint-0 enable chain
 net joint-0-index-enable <=> pid.x.index-enable
+net joint-0-index-enable <=> joint.0.index-enable
+net joint-0-index-enable <=> hm2_[MESA](BOARD).0.encoder.00.index-enable
+
 net joint-0-enable <= joint.0.amp-enable-out
 net joint-0-enable => pid.x.enable
+
+# position command and feedback
+net joint-0-pos-cmd <= joint.0.motor-pos-cmd
+net joint-0-pos-cmd => pid.x.command
+
+net joint-0-pos-fb <= hm2_[MESA](BOARD).0.encoder.00.position
+net joint-0-pos-fb => joint.0.motor-pos-fb
+net joint-0-pos-fb => pid.x.feedback
+
+net joint.0.output <= pid.x.output
+net joint.0.output => hm2_[MESA](BOARD).0.7i77.0.1.analogout0
 
 # PWM setup
 setp hm2_[MESA](BOARD).0.7i77.0.1.analogout0-scalemax [JOINT_0](ANALOG_SCALE_MAX)
@@ -76,13 +89,26 @@ setp pid.y.FF1 [JOINT_1](FF1)
 setp pid.y.FF2 [JOINT_1](FF2)
 setp pid.y.deadband [JOINT_1](DEADBAND)
 setp pid.y.maxoutput [JOINT_1](MAX_OUTPUT)
-setp pid.y.maxerror [JOINT_1](MAX_ERROR)
 setp pid.y.error-previous-target true
 
 # joint-1 enable chain
 net joint-1-index-enable <=> pid.y.index-enable
+net joint-1-index-enable <=> joint.1.index-enable
+net joint-1-index-enable <=> hm2_[MESA](BOARD).0.encoder.01.index-enable
+
 net joint-1-enable <= joint.1.amp-enable-out
 net joint-1-enable => pid.y.enable
+
+# position command and feedback
+net joint-1-pos-cmd <= joint.1.motor-pos-cmd
+net joint-1-pos-cmd => pid.y.command
+
+net joint-1-pos-fb <= hm2_[MESA](BOARD).0.encoder.01.position
+net joint-1-pos-fb => joint.1.motor-pos-fb
+net joint-1-pos-fb => pid.y.feedback
+
+net joint.1.output <= pid.y.output
+net joint.1.output => hm2_[MESA](BOARD).0.7i77.0.1.analogout1
 
 # PWM setup
 setp hm2_[MESA](BOARD).0.7i77.0.1.analogout1-scalemax [JOINT_1](ANALOG_SCALE_MAX)
@@ -109,13 +135,26 @@ setp pid.z.FF1 [JOINT_2](FF1)
 setp pid.z.FF2 [JOINT_2](FF2)
 setp pid.z.deadband [JOINT_2](DEADBAND)
 setp pid.z.maxoutput [JOINT_2](MAX_OUTPUT)
-setp pid.z.maxerror [JOINT_2](MAX_ERROR)
 setp pid.z.error-previous-target true
 
 # joint-2 enable chain
 net joint-2-index-enable <=> pid.z.index-enable
+net joint-2-index-enable <=> joint.2.index-enable
+net joint-2-index-enable <=> hm2_[MESA](BOARD).0.encoder.02.index-enable
+
 net joint-2-enable <= joint.2.amp-enable-out
 net joint-2-enable => pid.z.enable
+
+# position command and feedback
+net joint-2-pos-cmd <= joint.2.motor-pos-cmd
+net joint-2-pos-cmd => pid.z.command
+
+net joint-2-pos-fb <= hm2_[MESA](BOARD).0.encoder.02.position
+net joint-2-pos-fb => joint.2.motor-pos-fb
+net joint-2-pos-fb => pid.z.feedback
+
+net joint.2.output <= pid.z.output
+net joint.2.output => hm2_[MESA](BOARD).0.7i77.0.1.analogout2
 
 # PWM setup
 setp hm2_[MESA](BOARD).0.7i77.0.1.analogout2-scalemax [JOINT_2](ANALOG_SCALE_MAX)

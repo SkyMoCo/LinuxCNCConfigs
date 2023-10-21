@@ -1,0 +1,9 @@
+# This file was created with the Mesa Configuration Tool on Oct 20 2023 12:05:11
+# If you make changes to this file DO NOT use the Configuration Tool
+
+# Inputs
+net pos-limit-joint-0 joint.0.pos-lim-sw-in <= hm2_7i92.0.7i77.0.0.input-01
+net pos-limit-joint-1 joint.1.pos-lim-sw-in <= hm2_7i92.0.7i77.0.0.input-03
+net pos-limit-joint-2 joint.2.pos-lim-sw-in <= hm2_7i92.0.7i77.0.0.input-05
+
+# Outputs

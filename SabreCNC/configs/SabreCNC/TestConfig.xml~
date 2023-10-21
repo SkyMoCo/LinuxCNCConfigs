@@ -1,0 +1,103 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<pyvcp>
+<hbox>
+<vbox>
+
+
+<labelframe text="X-AXIS SERVO">
+	<hbox>
+    <meter>
+        <halpin>"Xvel-cmd"</halpin>
+        <text>"PWM"</text>
+        <subtext>"X-AXIS"</subtext>
+        <size>135</size>
+        <min_>-10</min_>
+        <max_>10</max_>
+        <majorscale>10</majorscale>
+        <minorscale>1</minorscale>
+    </meter>
+	<vbox>
+	<rectled> 
+		<halpin>"out12"</halpin>  
+         	<height>"100"</height>
+		<width>"50"</width> 
+		<on_color>"green"</on_color> 
+		<off_color>"orange"</off_color> 
+	</rectled>
+	<label text="Brake X"/>
+	</vbox>
+	</hbox>
+</labelframe>
+
+
+<labelframe text="Y-AXIS SERVO">
+	<hbox>
+    <meter>
+        <halpin>"Yvel-cmd"</halpin>
+        <text>"PWM"</text>
+        <subtext>"Y-AXIS"</subtext>
+        <size>135</size>
+        <min_>-10</min_>
+        <max_>10</max_>
+        <majorscale>10</majorscale>
+        <minorscale>1</minorscale>
+    </meter>
+	<vbox>
+	<rectled> 
+		<halpin>"out13"</halpin>  
+         	<height>"100"</height>
+		<width>"50"</width> 
+		<on_color>"green"</on_color> 
+		<off_color>"orange"</off_color> 
+	</rectled>
+	<label text="Brake Y"/>
+	</vbox>
+	</hbox>
+</labelframe>
+
+<labelframe text="Z-AXIS SERVO">
+	<hbox>
+    <meter>
+        <halpin>"Zvel-cmd"</halpin>
+        <text>"PWM"</text>
+        <subtext>"Z-AXIS"</subtext>
+        <size>135</size>
+        <min_>-10</min_>
+        <max_>10</max_>
+        <majorscale>10</majorscale>
+        <minorscale>1</minorscale>
+    </meter>
+	<vbox>
+	<rectled> 
+		<halpin>"out06"</halpin>  
+         	<height>"50"</height>
+		<width>"50"</width> 
+		<on_color>"green"</on_color> 
+		<off_color>"orange"</off_color> 
+	</rectled>
+	<label text="Brake Z"/>
+	<rectled> 
+		<halpin>"out14"</halpin>  
+         	<height>"50"</height>
+		<width>"50"</width> 
+		<on_color>"green"</on_color> 
+		<off_color>"orange"</off_color> 
+	</rectled>
+	<label text="Brake Z"/>
+	</vbox>
+	</hbox>
+</labelframe>
+
+<labelframe text="Information">
+	<hbox>
+	<vbox>
+	<label text="SERVO CONTROL by  TOM BERISHA"/> 
+					 
+	<label text="386(0)49137704  Peja KOSOVA"/>
+					 
+	</vbox>
+	</hbox>
+</labelframe>
+</vbox>
+</hbox>
+</pyvcp>
