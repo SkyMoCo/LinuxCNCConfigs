@@ -51,26 +51,26 @@
 	      <led> 
 		<halpin>"in00"</halpin>  
 		<size>17</size>  
-		<on_color>"green"</on_color> 
-		<off_color>"red"</off_color> 
+		<on_color>"yellow"</on_color> 
+		<off_color>"grey"</off_color> 
 	      </led>
 	      <led> 
 		<halpin>"in01"</halpin>  
 		<size>17</size>  
-		<on_color>"green"</on_color> 
-		<off_color>"red"</off_color> 
+		<on_color>"yellow"</on_color> 
+		<off_color>"grey"</off_color> 
 	      </led>
 	      <led> 
 		<halpin>"in02"</halpin>  
 		<size>17</size>  
-		<on_color>"green"</on_color> 
-		<off_color>"red"</off_color> 
+		<on_color>"red"</on_color> 
+		<off_color>"green"</off_color> 
 	      </led>
 	      <led> 
 		<halpin>"in03"</halpin>  
 		<size>17</size>  
-		<on_color>"green"</on_color> 
-		<off_color>"red"</off_color> 
+		<on_color>"red"</on_color> 
+		<off_color>"green"</off_color> 
 	      </led>
 	      <led> 
 		<halpin>"in04"</halpin>  
@@ -84,7 +84,7 @@
 	      <label text="X Limit"/>
 	      <label text="Y Home "/> 
 	      <label text="Y Limit"/> 
-	      <label text="Z Home "/> 
+	      <label text="Z Home"/> 
 	    </vbox>
 	  </hbox>
 	</labelframe>
