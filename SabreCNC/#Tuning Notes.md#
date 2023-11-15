@@ -1,5 +1,0 @@
-Base config of P50, was undershooting target
-
-	Changed to 75,  undershoot was .0004
-	Change to 150,  undershoot was zero
-	

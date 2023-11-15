@@ -230,7 +230,7 @@
   <property type="string" name="increments_imperial_qtplasmac" value="1in .1in .01in .001in .0001in"/>
   <property type="string" name="increments_metric" value="5mm 1mm .5mm .1mm .05mm .01mm .005mm"/>
   <property type="string" name="increments_metric_qtplasmac" value="10mm 1mm .1mm .01mm .001mm"/>
-  <property type="bool" name="incrselect" value="False"/>
+  <property type="bool" name="incrselect" value="True"/>
   <property type="bool" name="individual_homing" value="False"/>
   <property type="string" name="ioaddr1" value="0"/>
   <property type="string" name="ioaddr2" value="1"/>
