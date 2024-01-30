@@ -1,0 +1,3 @@
+loadusr -W mb2hal config=mb2hal.ini
+loadusr halshow
+

@@ -1,0 +1,26 @@
+# Include your customized HAL commands here
+# This file will not be overwritten when you run stepconf again
+
+loadusr -Wn spindle-vfd mb2hal config=omron-mb2hal.ini
+
+loadrt mux4 names=mux4.vfd-runmode
+loadrt scale names=scale.vfd-freq
+loadrt invert count=1
+loadrt near names=near-speed
+
+addf mux4.vfd-runmode   servo-thread
+addf near-speed         servo-thread
+
+# Choose command: Forward/Reverse/Stop
+setp mux4.vfd-runmode.in0 0		# Stop
+setp mux4.vfd-runmode.in1 1		# Forward Run
+setp mux4.vfd-runmode.in2 0		# Stop
+setp mux4.vfd-runmode.in3 3		# Reverse Run
+net spindle-enable spindle.0.on => mux4.vfd-runmode.sel0
+net spindle-cw spindle.0.forward => mux4.vfd-runmode.sel1
+net spindle-runmode mux4.vfd-runmode.out => spindle-vfd.runmode.00.float
+
+setp scale.vfd-freq.gain 0.1666666666667
+net spindle-vel-cmd-rpm => scale.vfd-freq.in
+net vfd-freq-input <= scale.vfd-freq.out => spindle-vfd.target-freq.00.float
+

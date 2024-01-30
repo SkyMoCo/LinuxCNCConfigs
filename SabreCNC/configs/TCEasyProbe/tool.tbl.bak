@@ -1,0 +1,4 @@
+T1  P1  Z-3.733463  D0.25  ;1/4 upcut router
+T2  P2  X0  Z-3.244977  D0.125  ;.125 drill
+T3  P3  Z1.273  D0.25  ;1/4 Bar
+T4  P4  D2  ;2 inch mill Sample Tool

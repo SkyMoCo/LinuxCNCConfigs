@@ -1,0 +1,77 @@
+halcmd: source vfd.hal
+mb2hal parse_common_section DEBUG: [MB2HAL_INIT] [INIT_DEBUG] [3]
+mb2hal parse_common_section DEBUG: [MB2HAL_INIT] [VERSION] [1001]
+mb2hal parse_common_section DEBUG: [MB2HAL_INIT] [HAL_MODULE_NAME] [mb2hal]
+mb2hal parse_common_section DEBUG: [MB2HAL_INIT] [SLOWDOWN] [1.000]
+mb2hal parse_common_section DEBUG: [MB2HAL_INIT] [TOTAL_TRANSACTIONS] [1]
+mb2hal parse_transaction_section DEBUG: [TRANSACTION_00] [LINK_TYPE] [serial] [0]
+mb2hal parse_serial_subsection DEBUG: [TRANSACTION_00] [SERIAL_PORT] [/dev/ttyUSB0]
+mb2hal parse_serial_subsection DEBUG: [TRANSACTION_00] [SERIAL_BAUD] [9600]
+mb2hal parse_serial_subsection DEBUG: [TRANSACTION_00] [SERIAL_BITS] [8]
+mb2hal parse_serial_subsection DEBUG: [TRANSACTION_00] [SERIAL_PARITY] [even]
+mb2hal parse_serial_subsection DEBUG: [TRANSACTION_00] [SERIAL_STOP] [1]
+mb2hal parse_serial_subsection DEBUG: [TRANSACTION_00] [SERIAL_DELAY_MS] [10]
+mb2hal parse_transaction_section DEBUG: [TRANSACTION_00] [MB_SLAVE_ID] [1]
+mb2hal parse_transaction_section DEBUG: [TRANSACTION_00] [FIRST_ELEMENT] [53]
+mb2hal parse_transaction_section DEBUG: [TRANSACTION_00] [PIN_NAMES] [readElapsedTime1,readElapsedTime2]
+mb2hal parse_transaction_section DEBUG: [TRANSACTION_00] [NELEMENTS] [2]
+mb2hal parse_transaction_section DEBUG: [TRANSACTION_00] [MAX_UPDATE_RATE] [10.000]
+mb2hal parse_transaction_section DEBUG: [TRANSACTION_00] [MB_RESPONSE_TIMEOUT_MS] [500]
+mb2hal parse_transaction_section DEBUG: [TRANSACTION_00] [MB_BYTE_TIMEOUT_MS] [500]
+mb2hal parse_transaction_section DEBUG: [TRANSACTION_00] [DEBUG] [4]
+mb2hal parse_transaction_section DEBUG: [TRANSACTION_00] [MB_TX_CODE] [fnct_03_read_holding_registers] [2]
+mb2hal parse_transaction_section DEBUG: [TRANSACTION_00] [HAL_TX_NAME] [readMonitors]
+mb2hal parse_ini_file OK: parse_transaction_section 0 OK
+mb2hal main OK: parse_ini_file done OK
+mb2hal init_mb_links DEBUG: LINK 0 (RTU) link_type[0] device[/dev/ttyUSB0] baud[9600] data[8] parity[E] stop[1] fd[-1]
+mb2hal main OK: init_gbl.mb_link done OK
+mb2hal init_mb_tx DEBUG: MB_TX 0 lk_n[0] tx_n[0] cfg_dbg[4] lk_dbg[1] t_inc[0.100] nxt_t[0.000]
+mb2hal main OK: init_gbl.mb_tx done OK
+mb2hal create_each_mb_tx_hal_pins DEBUG: mb_tx_num [0] pin_name [mb2hal.readMonitors.num_errors]
+mb2hal create_each_mb_tx_hal_pins DEBUG: mb_tx_num [0] pin_name [mb2hal.readMonitors.readElapsedTime1]
+mb2hal create_each_mb_tx_hal_pins DEBUG: mb_tx_num [0] pin_name [mb2hal.readMonitors.readElapsedTime2]
+mb2hal main OK: HAL components created OK
+mb2hal main OK: Link thread loop and logic 0 created OK
+mb2hal main OK: mb2hal is running
+mb2hal link_loop_and_logic DEBUGMAX: mb_tx_num[0] mb_links[0] thread[0] fd[-1] going to TEST availability
+mb2hal link_loop_and_logic DEBUGMAX: mb_tx_num[0] mb_links[0] thread[0] fd[-1] going to TEST connection
+mb2hal get_tx_connection DEBUGMAX: mb_tx_num[0] mb_links[0] new connection -> fd[4]
+mb2hal link_loop_and_logic DEBUGMAX: mb_tx_num[0] mb_links[0] thread[0] fd[4] lk_dbg[1] going to EXECUTE transaction
+mb2hal fnct_03_read_holding_registers DEBUG: mb_tx[0] mb_links[0] slave[1] fd[4] 1st_addr[53] nelem[2]
+[01][03][00][35][00][02][D4][05]
+Waiting for a confirmation...
+halcmd: <01><03><04><06><14><00><00><BA><BF>
+mb2hal link_loop_and_logic OK: mb_tx_num[0] mb_links[0] thread[0] fd[4] transaction OK, update_HZ[0.000]
+mb2hal link_loop_and_logic DEBUG: mb_tx_num[0] mb_links[0] thread[0] fd[4] SERIAL_DELAY_MS activated [10]
+mb2hal link_loop_and_logic DEBUG: mb_tx_num[0] mb_links[0] thread[0] fd[4] gbl.slowdown activated [1.000]
+mb2hal link_loop_and_logic DEBUGMAX: mb_tx_num[0] mb_links[0] thread[0] fd[4] going to TEST availability
+mb2hal link_loop_and_logic DEBUGMAX: mb_tx_num[0] mb_links[0] thread[0] fd[4] going to TEST connection
+mb2hal get_tx_connection DEBUGMAX: mb_tx_num[0] mb_links[0] already connected to fd[4]
+mb2hal link_loop_and_logic DEBUGMAX: mb_tx_num[0] mb_links[0] thread[0] fd[4] lk_dbg[1] going to EXECUTE transaction
+mb2hal fnct_03_read_holding_registers DEBUG: mb_tx[0] mb_links[0] slave[1] fd[4] 1st_addr[53] nelem[2]
+[01][03][00][35][00][02][D4][05]
+Waiting for a confirmation...
+<01><03><04><06><14><00><00><BA><BF>
+mb2hal link_loop_and_logic OK: mb_tx_num[0] mb_links[0] thread[0] fd[4] transaction OK, update_HZ[0.961]
+mb2hal link_loop_and_logic DEBUG: mb_tx_num[0] mb_links[0] thread[0] fd[4] SERIAL_DELAY_MS activated [10]
+mb2hal link_loop_and_logic DEBUG: mb_tx_num[0] mb_links[0] thread[0] fd[4] gbl.slowdown activated [1.000]
+mb2hal link_loop_and_logic DEBUGMAX: mb_tx_num[0] mb_links[0] thread[0] fd[4] going to TEST availability
+mb2hal link_loop_and_logic DEBUGMAX: mb_tx_num[0] mb_links[0] thread[0] fd[4] going to TEST connection
+mb2hal get_tx_connection DEBUGMAX: mb_tx_num[0] mb_links[0] already connected to fd[4]
+mb2hal link_loop_and_logic DEBUGMAX: mb_tx_num[0] mb_links[0] thread[0] fd[4] lk_dbg[1] going to EXECUTE transaction
+mb2hal fnct_03_read_holding_registers DEBUG: mb_tx[0] mb_links[0] slave[1] fd[4] 1st_addr[53] nelem[2]
+[01][03][00][35][00][02][D4][05]
+Waiting for a confirmation...
+<01><03><04><06><14><00><00><BA><BF>
+mb2hal link_loop_and_logic OK: mb_tx_num[0] mb_links[0] thread[0] fd[4] transaction OK, update_HZ[0.962]
+mb2hal link_loop_and_logic DEBUG: mb_tx_num[0] mb_links[0] thread[0] fd[4] SERIAL_DELAY_MS activated [10]
+mb2hal link_loop_and_logic DEBUG: mb_tx_num[0] mb_links[0] thread[0] fd[4] gbl.slowdown activated [1.000]
+mb2hal link_loop_and_logic DEBUGMAX: mb_tx_num[0] mb_links[0] thread[0] fd[4] going to TEST availability
+mb2hal link_loop_and_logic DEBUGMAX: mb_tx_num[0] mb_links[0] thread[0] fd[4] going to TEST connection
+mb2hal get_tx_connection DEBUGMAX: mb_tx_num[0] mb_links[0] already connected to fd[4]
+mb2hal link_loop_and_logic DEBUGMAX: mb_tx_num[0] mb_links[0] thread[0] fd[4] lk_dbg[1] going to EXECUTE transaction
+mb2hal fnct_03_read_holding_registers DEBUG: mb_tx[0] mb_links[0] slave[1] fd[4] 1st_addr[53] nelem[2]
+[01][03][00][35][00][02][D4][05]
+Waiting for a confirmation...
+<01><03><04><06><14><00><00><BA><BF>
+mb2hal link_loop_and_logic OK: mb_tx_num[0] mb_links[0] thread[0] fd[4] transaction OK, update_HZ[0.961]
