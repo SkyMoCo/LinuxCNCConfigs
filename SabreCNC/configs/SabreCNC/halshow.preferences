@@ -1,6 +1,6 @@
 # Halshow settings
 # This file is generated automatically.
-wm geometry . 1824x852+2042+563
+wm geometry . 1824x852+917+170
 placeFrames 0.40261627906976744
 set ::ratio 0.40261627906976744
 set ::old_w_leftf 160
@@ -14,6 +14,21 @@ set ::watchlist {
     pin+hm2_7i92.0.7i77.0.0.input-03
     pin+hm2_7i92.0.7i77.0.0.input-04
     pin+hm2_7i92.0.7i77.0.0.input-00-not
+    pin+whb.button.feed-minus
+    pin+whb.button.macro-1
+    pin+whb.pendant.is-connected
+    pin+whb.pendant.is-sleeping
+    pin+halui.axis.x.is-selected
+    pin+whb.axis.x.jog-enable
+    pin+whb.halui.axis.x.select
+    pin+whb.axis.x.jog-counts
+    pin+halui.machine.is-on
+    sig+x-home-sw
+    sig+x-enable
+    sig+pdnt.machine.on
+    sig+pdnt.machine.off
+    pin+halui.machine.on
+    pin+halui.machine.off
 }
 set ::workmode watchhal
 set ::watchInterval 100

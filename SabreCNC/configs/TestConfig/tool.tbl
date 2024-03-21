@@ -1,4 +1,6 @@
-T1   P1   D+0.250000 Z-3.733463 ;1/4 upcut router
-T2   P2   D+0.125000 Z-3.244977 ;.125 drill
+T1   P1   D+0.250000 Z-2.977459 ;1/4 upcut router
+T2   P2   D+0.125000 Z-3.495501 ;1/8 Single Point Router
 T3   P3   D+0.250000 Z+1.273000 ;1/4 Bar
-T4   P4   D+0.500000 Z-4.098810 ;1/2 V bit
+T4   P4   D+0.500000 Z-3.705438 ;1/2 V bit
+T6   P6   D+0.062500 Z-3.921929 ;1/16 Router Bit
+T7   P7   Z-3.428356 ;1/8 Spiral Upcut Router Bit

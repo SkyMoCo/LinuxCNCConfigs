@@ -1,0 +1,181 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<pyvcp>
+  <tabs>
+    <names>["Servos","EasyProbe"]</names>
+    <!-- Beginning of Servo Tab -->
+    <vbox>
+	<labelframe text="X-AXIS SERVO">
+	  <hbox>
+	    <meter>
+              <halpin>"Xvel-cmd"</halpin>
+              <text>"PWM"</text>
+              <subtext>"X-AXIS"</subtext>
+              <size>135</size>
+              <min_>-10</min_>
+              <max_>10</max_>
+              <majorscale>10</majorscale>
+              <minorscale>1</minorscale>
+	    </meter>
+	  </hbox>
+	</labelframe>
+	<labelframe text="Y-AXIS SERVO">
+	  <hbox>
+	    <meter>
+              <halpin>"Yvel-cmd"</halpin>
+              <text>"PWM"</text>
+              <subtext>"Y-AXIS"</subtext>
+              <size>135</size>
+              <min_>-10</min_>
+              <max_>10</max_>
+              <majorscale>10</majorscale>
+              <minorscale>1</minorscale>
+	    </meter>
+	  </hbox>
+	</labelframe>
+	<labelframe text="Z-AXIS SERVO">
+	  <hbox>
+	    <meter>
+              <halpin>"Zvel-cmd"</halpin>
+              <text>"PWM"</text>
+              <subtext>"Z-AXIS"</subtext>
+              <size>135</size>
+              <min_>-10</min_>
+              <max_>10</max_>
+              <majorscale>10</majorscale>
+              <minorscale>1</minorscale>
+	    </meter>
+	  </hbox>
+	</labelframe>
+	<hbox>
+	  <labelframe text="Home and Limits">
+	    <hbox>
+	      <vbox>
+		<led> 
+		  <halpin>"in00"</halpin>  
+		  <size>17</size>  
+		  <on_color>"red"</on_color> 
+		  <off_color>"green"</off_color> 
+		</led>
+		<led> 
+		  <halpin>"in01"</halpin>  
+		  <size>17</size>  
+		  <on_color>"red"</on_color> 
+		  <off_color>"green"</off_color> 
+		</led>
+		<led> 
+		  <halpin>"in02"</halpin>  
+		  <size>17</size>  
+		  <on_color>"red"</on_color> 
+		  <off_color>"green"</off_color> 
+		</led>
+		<led> 
+		  <halpin>"in03"</halpin>  
+		  <size>17</size>  
+		  <on_color>"red"</on_color> 
+		  <off_color>"green"</off_color> 
+		</led>
+		<led> 
+		  <halpin>"in04"</halpin>  
+		  <size>17</size>  
+		  <on_color>"red"</on_color> 
+		  <off_color>"green"</off_color> 
+		</led>
+	      </vbox>
+	      <vbox>
+		<label text="X Home "/> 
+		<label text="X Limit"/>
+		<label text="Y Home "/> 
+		<label text="Y Limit"/> 
+		<label text="Z Home"/> 
+	      </vbox>
+	    </hbox>
+	  </labelframe>
+	</hbox>
+      </vbox>
+     <!-- Beginning of probe tab -->
+     <vbox>
+       <hbox>
+         <button text="G54" width="6" padx="10" halpin="g54" disable_pin="true" />
+         <button text="G55" width="6" padx="10" halpin="g55" disable_pin="true" />
+         <button text="G56" width="6" padx="10" halpin="g56" disable_pin="true" />
+       </hbox>
+       <hbox>
+         <button text="G57" width="6" padx="10" halpin="g57" disable_pin="true" />
+         <button text="G58" width="6" padx="10" halpin="g58" disable_pin="true" />
+         <button text="G59" width="6" padx="10" halpin="g59" disable_pin="true" />
+       </hbox>
+       <hbox>
+         <button text="G59.1" width="6" padx="10" halpin="g591" disable_pin="true" />
+         <button text="G59.2" width="6" padx="10" halpin="g592" disable_pin="true" />
+         <button text="G59.3" width="6" padx="10" halpin="g593" disable_pin="true" />
+       </hbox>
+       <label font="('', 13)" text=" " />
+       <hbox>
+         <button text="Tool 1" width="6" padx="10" halpin="tool1" disable_pin="true" />
+         <button text="Tool 2" width="6" padx="10" halpin="tool2" disable_pin="true" />
+         <button text="Tool 3" width="6" padx="10" halpin="tool3" disable_pin="true" />
+       </hbox>
+       <label font="('', 13)" text=" " />
+       <hbox>
+         <label text="Diameter" width="11" />
+         <spinbox width="10" min_="0" max_="100" initval="25" param_pin="1" format="2.3f" halpin="probe_diameter" />
+         <multilabel halpin="units_1">
+           <legends>["mm", "in"]</legends>
+         </multilabel>
+       </hbox>
+       <label font="('', 1)" text=" " />
+       <hbox>
+         <label text="Zero/Offset" width="11" />
+         <spinbox width="10" min_="-1000" max_="1000" initval="0" param_pin="1" format="2.3f" halpin="probe_offset" />
+         <multilabel halpin="units_2">
+           <legends>["mm", "in"]</legends>
+         </multilabel>
+       </hbox>
+       <label text="Press Enter to apply new Values!" width="24" pady="6" />
+       <label font="('', 10)" text=" " />
+       <hbox>
+         <button font="('easyicons', 25)" text="A" padx="2" pady="2" halpin="blank_1" relief="flat" disable_pin="true" />
+         <button font="('easyicons', 25)" text="B" padx="2" pady="2" halpin="probe_y" disable_pin="true" />
+         <button font="('easyicons', 25)" text="A" padx="2" pady="2" halpin="blank_2" relief="flat" disable_pin="true" />
+         <button font="('easyicons', 25)" text="A" padx="2" pady="2" halpin="blank_3" relief="flat" disable_pin="true" />
+         <button font="('easyicons', 25)" text="E" padx="2" pady="2" halpin="midpoint" disable_pin="true" />
+       </hbox>
+       <hbox>
+         <button font="('easyicons', 25)" text="F" padx="2" pady="2" halpin="probe_minus_x" disable_pin="true" />
+         <button font="('easyicons', 25)" text="G" padx="2" pady="2" halpin="probe_hole" disable_pin="true" />
+         <button font="('easyicons', 25)" text="H" padx="2" pady="2" halpin="probe_x" disable_pin="true" />
+         <button font="('easyicons', 25)" text="A" padx="2" pady="2" halpin="blank_4" relief="flat" disable_pin="true" />
+         <button font="('easyicons', 25)" text="J" padx="2" pady="2" halpin="rotation" disable_pin="true" />
+       </hbox>
+       <hbox>
+         <button font="('easyicons', 25)" text="A" padx="2" pady="2" halpin="blank_5" relief="flat" disable_pin="true" />
+         <button font="('easyicons', 25)" text="L" padx="2" pady="2" halpin="probe_minus_y" disable_pin="true" />
+         <button font="('easyicons', 25)" text="A" padx="2" pady="2" halpin="blank_6" relief="flat" disable_pin="true" />
+         <button font="('easyicons', 25)" text="N" padx="2" pady="2" halpin="probe_minus_z" disable_pin="true" />
+         <button font="('easyicons', 25)" text="O" padx="2" pady="2" halpin="distance" disable_pin="true" />
+       </hbox>
+       <label font="('', 13)" text=" " />
+       <hbox>
+         <button font="('easyicons', 8)" text="0" padx="2" halpin="p0x0" disable_pin="true" />
+         <button font="('easyicons', 8)" text="1" padx="2" halpin="p0y0" disable_pin="true" />
+         <button font="('easyicons', 8)" text="2" padx="2" halpin="p0z0" disable_pin="true" />
+         <button font="('easyicons', 8)" text="3" padx="2" halpin="p0r0" disable_pin="true" />
+       </hbox>
+       <label font="('', 13)" text=" " />
+       <hbox>
+         <checkbutton text="Activate " width="9" halpin="act_calib" />
+         <button text="Calibration" halpin="probe_calib" disable_pin="true" />
+       </hbox>
+       <label font="('', 11)" text=" " />
+       <hbox>
+         <label text="Probe Signal" width="12" />
+         <rectled width="25" height="25" on_color="#ff3000" off_color="#80b000" halpin="probe_led" />
+       </hbox>
+       <hbox>
+         <label text="Spindle Inhibit" width="12" />
+         <rectled width="25" height="25" on_color="#ff3000" off_color="#80b000" halpin="spindle-inhibit" />
+       </hbox>
+     </vbox>
+     <!-- End of probe tab -->
+   </tabs>
+</pyvcp>
