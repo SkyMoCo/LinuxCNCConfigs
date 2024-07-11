@@ -1,0 +1,5 @@
+# ignore volatile files
+linuxcnc.var
+linuxcnc.var.bak
+tool.tbl
+tool.tbl.bak

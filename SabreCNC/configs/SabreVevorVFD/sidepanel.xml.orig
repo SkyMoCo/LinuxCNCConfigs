@@ -1,0 +1,209 @@
+<pyvcp>
+    <labelframe text="Spindle">
+        <hbox>
+            <label>
+                <text>"RPM:"</text>
+            </label>
+            <bar>
+                <halpin>"spindle-rpm"</halpin>
+                <max_>24000</max_>
+            </bar>
+        </hbox>
+        <table>
+            <tablerow/>
+            <label><text>"Forward:"</text></label>
+            <led>
+                <halpin>"spindle-forward"</halpin>
+                <off_color>"gray"</off_color>
+            </led>
+            <label><text>"Reverse:"</text></label>
+            <led>
+                <halpin>"spindle-reverse"</halpin>
+                <off_color>"gray"</off_color>
+            </led>
+
+            <tablerow/>
+            <label><text>"At Speed:"</text></label>
+            <led>
+                <halpin>"spindle-at-speed"</halpin>
+                <off_color>"gray"</off_color>
+            </led>
+
+            <tablerow/>
+            <label><text>"Drive Ready"</text></label>
+            <led>
+                <halpin>"spindle-ready"</halpin>
+            </led>
+
+            <tablerow/>
+            <label><text>"Drive Fault"</text></label>
+            <led>
+                <halpin>"spindle-fault"</halpin>
+                <on_color>"red"</on_color>
+                <off_color>"gray"</off_color>
+            </led>
+
+            <tablerow/>
+            <label><text>"Drive Connected"</text></label>
+            <led>
+                <halpin>"spindle-connected"</halpin>
+            </led>
+        </table>
+        <button>
+                <halpin>"spindle-reset"</halpin>
+                <text>"Clear Fault"</text>
+        </button>
+        <!-- <button>
+            <halpin>"spindle-fake-fault"</halpin>
+            <text>"Make Fake Fault"</text>
+        </button> -->
+    </labelframe>
+
+    <labelframe text="Servos">
+        <table>
+            <tablerow/>
+            <label><text>"X Ready:"</text></label>
+            <led><halpin>"servo-x-ready"</halpin><off_color>"gray"</off_color></led>
+            <label><text>"X Alarm:"</text></label>
+            <led><halpin>"servo-x-alarm"</halpin><on_color>"red"</on_color><off_color>"gray"</off_color></led>
+
+            <tablerow/>
+            <label><text>"Y Ready:"</text></label>
+            <led><halpin>"servo-y-ready"</halpin><off_color>"gray"</off_color></led>
+            <label><text>"Y Alarm:"</text></label>
+            <led><halpin>"servo-y-alarm"</halpin><on_color>"red"</on_color><off_color>"gray"</off_color></led>
+
+            <tablerow/>
+            <label><text>"Z1 Ready:"</text></label>
+            <led><halpin>"servo-z1-ready"</halpin><off_color>"gray"</off_color></led>
+            <label><text>"Z1 Alarm:"</text></label>
+            <led><halpin>"servo-z1-alarm"</halpin><on_color>"red"</on_color><off_color>"gray"</off_color></led>
+
+            <tablerow/>
+            <label><text>"Z2 Ready:"</text></label>
+            <led><halpin>"servo-z2-ready"</halpin><off_color>"gray"</off_color></led>
+            <label><text>"Z2 Alarm:"</text></label>
+            <led><halpin>"servo-z2-alarm"</halpin><on_color>"red"</on_color><off_color>"gray"</off_color></led>
+        </table>
+    </labelframe>
+
+    <labelframe text="Home/Limit Switches">
+        <table>
+            <tablerow/>
+            <label><text>"X-:"</text></label>
+            <led><halpin>"limit-x-neg"</halpin><on_color>"red"</on_color><off_color>"gray"</off_color></led>
+            <label><text>"X+:"</text></label>
+            <led><halpin>"limit-x-pos"</halpin><on_color>"red"</on_color><off_color>"gray"</off_color></led>
+
+            <tablerow/>
+            <label><text>"Y-:"</text></label>
+            <led><halpin>"limit-y-neg"</halpin><on_color>"red"</on_color><off_color>"gray"</off_color></led>
+            <label><text>"Y+:"</text></label>
+            <led><halpin>"limit-y-pos"</halpin><on_color>"red"</on_color><off_color>"gray"</off_color></led>
+
+            <tablerow/>
+            <label><text>"Z1-:"</text></label>
+            <led><halpin>"limit-z1-neg"</halpin><on_color>"red"</on_color><off_color>"gray"</off_color></led>
+            <label><text>"Z1+:"</text></label>
+            <led><halpin>"limit-z1-pos"</halpin><on_color>"red"</on_color><off_color>"gray"</off_color></led>
+
+            <tablerow/>
+            <label><text>"Z2-:"</text></label>
+            <led><halpin>"limit-z2-neg"</halpin><on_color>"red"</on_color><off_color>"gray"</off_color></led>
+            <label><text>"Z2+:"</text></label>
+            <led><halpin>"limit-z2-pos"</halpin><on_color>"red"</on_color><off_color>"gray"</off_color></led>
+        </table>
+    </labelframe>
+
+    <labelframe text="Probe Inputs">
+        <table>
+            <tablerow/>
+            <label><text>"Spindle Probe:"</text></label>
+            <led><halpin>"spindle-probe"</halpin><off_color>"gray"</off_color></led>
+
+            <tablerow/>
+            <label><text>"Tool Probe:"</text></label>
+            <led><halpin>"tool-probe"</halpin><off_color>"gray"</off_color></led>
+        </table>
+    </labelframe>
+
+    <labelframe text="E-Stop Cable">
+        <table>
+            <tablerow/>
+            <label><text>"E-Stop Cable Connected:"</text></label>
+            <led><halpin>"estop-cable-connected"</halpin></led>
+        </table>
+    </labelframe>
+
+    <labelframe text="Relay Outputs">
+        <table>
+            <tablerow/>
+            <tablesticky sticky="nsw"/>
+            <checkbutton>
+                <halpin>"relay-vacuum"</halpin>
+                <text>"Vacuum"</text>
+            </checkbutton>
+
+            <tablerow/>
+            <tablesticky sticky="nsw"/>
+            <checkbutton>
+                <halpin>"relay-router"</halpin>
+                <text>"Router"</text>
+            </checkbutton>
+
+            <tablerow/>
+            <tablesticky sticky="nsw"/>
+            <label><text>"Spindle:"</text></label>
+            <led><halpin>"relay-spindle"</halpin><off_color>"gray"</off_color></led>
+        </table>
+    </labelframe>
+
+    <labelframe text="Run Timers">
+        <table>
+            <tablerow/>
+            <tablesticky sticky="nsw"/>
+            <label>
+                <text>"Software Uptime:"</text>
+                <font>("Helvetica",14)</font>
+            </label>
+            <tablesticky sticky="nesw"/>
+            <u32>
+                <halpin>"soft-time-hours"</halpin>
+                <font>("Helvetica",14)</font>
+                <format>"02dh"</format>
+            </u32>
+            <u32>
+                <halpin>"soft-time-minutes"</halpin>
+                <font>("Helvetica",14)</font>
+                <format>"02dm"</format>
+            </u32>
+            <u32>
+                <halpin>"soft-time-seconds"</halpin>
+                <font>("Helvetica",14)</font>
+                <format>"02ds"</format>
+            </u32>
+            <tablerow/>
+            <tablesticky sticky="nsw"/>
+            <label>
+                <text>"Cycle Time:"</text>
+                <font>("Helvetica",14)</font>
+            </label>
+            <tablesticky sticky="nesw"/>
+            <u32>
+                <halpin>"job-time-hours"</halpin>
+                <font>("Helvetica",14)</font>
+                <format>"02dh"</format>
+            </u32>
+            <u32>
+                <halpin>"job-time-minutes"</halpin>
+                <font>("Helvetica",14)</font>
+                <format>"02dm"</format>
+            </u32>
+            <u32 anchor="e">
+                <halpin>"job-time-seconds"</halpin>
+                <font>("Helvetica",14)</font>
+                <format>"02ds"</format>
+            </u32>
+        </table>
+    </labelframe>
+</pyvcp>

@@ -1,0 +1,67 @@
+############################################
+### Velocity PID Loops (modulate torque) ###
+############################################
+
+# X Velocity PID
+setp pid.vel.x.Pgain     [JOINT_0]VEL_P
+setp pid.vel.x.Igain     [JOINT_0]VEL_I
+setp pid.vel.x.Dgain     [JOINT_0]VEL_D
+setp pid.vel.x.bias      [JOINT_0]VEL_BIAS
+setp pid.vel.x.FF0       [JOINT_0]VEL_FF0
+setp pid.vel.x.FF1       [JOINT_0]VEL_FF1
+setp pid.vel.x.FF2       [JOINT_0]VEL_FF2
+setp pid.vel.x.deadband  [JOINT_0]VEL_DEADBAND
+setp pid.vel.x.maxoutput [JOINT_0]VEL_MAX_OUTPUT
+setp pid.vel.x.error-previous-target false
+net x-enable   => pid.vel.x.enable
+net x-vel-out  => pid.vel.x.command
+net x-vel-fb   => pid.vel.x.feedback
+net x-torque  <=  pid.vel.x.output
+
+# Y Velocity PID
+setp pid.vel.y.Pgain     [JOINT_1]VEL_P
+setp pid.vel.y.Igain     [JOINT_1]VEL_I
+setp pid.vel.y.Dgain     [JOINT_1]VEL_D
+setp pid.vel.y.bias      [JOINT_1]VEL_BIAS
+setp pid.vel.y.FF0       [JOINT_1]VEL_FF0
+setp pid.vel.y.FF1       [JOINT_1]VEL_FF1
+setp pid.vel.y.FF2       [JOINT_1]VEL_FF2
+setp pid.vel.y.deadband  [JOINT_1]VEL_DEADBAND
+setp pid.vel.y.maxoutput [JOINT_1]VEL_MAX_OUTPUT
+setp pid.vel.y.error-previous-target false
+net y-enable   => pid.vel.y.enable
+net y-vel-out  => pid.vel.y.command
+net y-vel-fb   => pid.vel.y.feedback
+net y-torque  <=  pid.vel.y.output
+
+# Z1 Velocity PID
+setp pid.vel.z1.Pgain     [JOINT_2]VEL_P
+setp pid.vel.z1.Igain     [JOINT_2]VEL_I
+setp pid.vel.z1.Dgain     [JOINT_2]VEL_D
+setp pid.vel.z1.bias      [JOINT_2]VEL_BIAS
+setp pid.vel.z1.FF0       [JOINT_2]VEL_FF0
+setp pid.vel.z1.FF1       [JOINT_2]VEL_FF1
+setp pid.vel.z1.FF2       [JOINT_2]VEL_FF2
+setp pid.vel.z1.deadband  [JOINT_2]VEL_DEADBAND
+setp pid.vel.z1.maxoutput [JOINT_2]VEL_MAX_OUTPUT
+setp pid.vel.z1.error-previous-target false
+net z1-enable   => pid.vel.z1.enable
+net z1-vel-out  => pid.vel.z1.command
+net z1-vel-fb   => pid.vel.z1.feedback
+net z1-torque  <=  pid.vel.z1.output
+
+# Z2 Velocity PID
+setp pid.vel.z2.Pgain     [JOINT_3]VEL_P
+setp pid.vel.z2.Igain     [JOINT_3]VEL_I
+setp pid.vel.z2.Dgain     [JOINT_3]VEL_D
+setp pid.vel.z2.bias      [JOINT_3]VEL_BIAS
+setp pid.vel.z2.FF0       [JOINT_3]VEL_FF0
+setp pid.vel.z2.FF1       [JOINT_3]VEL_FF1
+setp pid.vel.z2.FF2       [JOINT_3]VEL_FF2
+setp pid.vel.z2.deadband  [JOINT_3]VEL_DEADBAND
+setp pid.vel.z2.maxoutput [JOINT_3]VEL_MAX_OUTPUT
+setp pid.vel.z2.error-previous-target false
+net z2-enable   => pid.vel.z2.enable
+net z2-vel-out  => pid.vel.z2.command
+net z2-vel-fb   => pid.vel.z2.feedback
+net z2-torque  <=  pid.vel.z2.output

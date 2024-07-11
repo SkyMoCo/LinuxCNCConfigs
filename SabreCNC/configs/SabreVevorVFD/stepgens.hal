@@ -1,0 +1,147 @@
+#######################
+### StepGen Outputs ###
+#######################
+
+# X axis StepGen PID
+setp pid.stepgen.x.Pgain     1000.0
+setp pid.stepgen.x.Igain     0.0
+setp pid.stepgen.x.Dgain     0.0
+setp pid.stepgen.x.bias      0.0
+setp pid.stepgen.x.FF0       0.0
+setp pid.stepgen.x.FF1       1.0
+setp pid.stepgen.x.FF2       0.0
+setp pid.stepgen.x.deadband  0.0
+setp pid.stepgen.x.maxoutput 0.0
+setp pid.stepgen.x.error-previous-target true
+setp pid.stepgen.x.maxerror  0.01
+
+net x-index-enable <=> pid.stepgen.x.index-enable
+net x-enable        => pid.stepgen.x.enable
+net x-pos-cmd       => pid.stepgen.x.command
+net x-vel-cmd       => pid.stepgen.x.command-deriv
+net x-stp-fb        => pid.stepgen.x.feedback
+net x-stp-output   <=  pid.stepgen.x.output
+
+# Y axis StepGen PID
+setp pid.stepgen.y.Pgain     1000.0
+setp pid.stepgen.y.Igain     0.0
+setp pid.stepgen.y.Dgain     0.0
+setp pid.stepgen.y.bias      0.0
+setp pid.stepgen.y.FF0       0.0
+setp pid.stepgen.y.FF1       1.0
+setp pid.stepgen.y.FF2       0.0
+setp pid.stepgen.y.deadband  0.0
+setp pid.stepgen.y.maxoutput 0.0
+setp pid.stepgen.y.error-previous-target true
+setp pid.stepgen.y.maxerror  0.01
+
+net y-index-enable <=> pid.stepgen.y.index-enable
+net y-enable        => pid.stepgen.y.enable
+net y-pos-cmd       => pid.stepgen.y.command
+net y-vel-cmd       => pid.stepgen.y.command-deriv
+net y-stp-fb        => pid.stepgen.y.feedback
+net y-stp-output   <=  pid.stepgen.y.output
+
+# Z1 axis StepGen PID
+setp pid.stepgen.z1.Pgain     1000.0
+setp pid.stepgen.z1.Igain     0.0
+setp pid.stepgen.z1.Dgain     0.0
+setp pid.stepgen.z1.bias      0.0
+setp pid.stepgen.z1.FF0       0.0
+setp pid.stepgen.z1.FF1       1.0
+setp pid.stepgen.z1.FF2       0.0
+setp pid.stepgen.z1.deadband  0.0
+setp pid.stepgen.z1.maxoutput 0.0
+setp pid.stepgen.z1.error-previous-target true
+setp pid.stepgen.z1.maxerror  0.01
+
+net z1-index-enable <=> pid.stepgen.z1.index-enable
+net z1-enable        => pid.stepgen.z1.enable
+net z1-pos-cmd       => pid.stepgen.z1.command
+net z1-vel-cmd       => pid.stepgen.z1.command-deriv
+net z1-stp-fb        => pid.stepgen.z1.feedback
+net z1-stp-output   <=  pid.stepgen.z1.output
+
+# Z2 axis StepGen PID
+setp pid.stepgen.z2.Pgain     1000.0
+setp pid.stepgen.z2.Igain     0.0
+setp pid.stepgen.z2.Dgain     0.0
+setp pid.stepgen.z2.bias      0.0
+setp pid.stepgen.z2.FF0       0.0
+setp pid.stepgen.z2.FF1       1.0
+setp pid.stepgen.z2.FF2       0.0
+setp pid.stepgen.z2.deadband  0.0
+setp pid.stepgen.z2.maxoutput 0.0
+setp pid.stepgen.z2.error-previous-target true
+setp pid.stepgen.z2.maxerror  0.01
+
+net z2-index-enable <=> pid.stepgen.z2.index-enable
+net z2-enable        => pid.stepgen.z2.enable
+net z2-pos-cmd       => pid.stepgen.z2.command
+net z2-vel-cmd       => pid.stepgen.z2.command-deriv
+net z2-stp-fb        => pid.stepgen.z2.feedback
+net z2-stp-output   <=  pid.stepgen.z2.output
+
+# X axis StepGen output
+setp [HMOT](STEPGEN_X).dirsetup        [JOINT_0]DIRSETUP
+setp [HMOT](STEPGEN_X).dirhold         [JOINT_0]DIRHOLD
+setp [HMOT](STEPGEN_X).steplen         [JOINT_0]STEPLEN
+setp [HMOT](STEPGEN_X).stepspace       [JOINT_0]STEPSPACE
+setp [HMOT](STEPGEN_X).position-scale  [JOINT_0]STEP_SCALE
+setp [HMOT](STEPGEN_X).step_type       0
+setp [HMOT](STEPGEN_X).control-type    1
+setp [HMOT](STEPGEN_X).maxaccel        [JOINT_0]STEPGEN_MAXACCEL
+setp [HMOT](STEPGEN_X).maxvel          [JOINT_0]STEPGEN_MAXVEL
+setp [HMOT](STEPGEN_X).step.invert_output [JOINT_0]STEPGEN_INVERT_STEP
+setp [HMOT](STEPGEN_X).direction.invert_output [JOINT_0]STEPGEN_INVERT_DIR
+net x-stp-output  => [HMOT](STEPGEN_X).velocity-cmd
+net x-stp-fb     <=  [HMOT](STEPGEN_X).position-fb
+net x-enable      => [HMOT](STEPGEN_X).enable
+
+# Y axis StepGen output
+setp [HMOT](STEPGEN_Y).dirsetup        [JOINT_1]DIRSETUP
+setp [HMOT](STEPGEN_Y).dirhold         [JOINT_1]DIRHOLD
+setp [HMOT](STEPGEN_Y).steplen         [JOINT_1]STEPLEN
+setp [HMOT](STEPGEN_Y).stepspace       [JOINT_1]STEPSPACE
+setp [HMOT](STEPGEN_Y).position-scale  [JOINT_1]STEP_SCALE
+setp [HMOT](STEPGEN_Y).step_type       0
+setp [HMOT](STEPGEN_Y).control-type    1
+setp [HMOT](STEPGEN_Y).maxaccel        [JOINT_1]STEPGEN_MAXACCEL
+setp [HMOT](STEPGEN_Y).maxvel          [JOINT_1]STEPGEN_MAXVEL
+setp [HMOT](STEPGEN_Y).step.invert_output [JOINT_1]STEPGEN_INVERT_STEP
+setp [HMOT](STEPGEN_Y).direction.invert_output [JOINT_1]STEPGEN_INVERT_DIR
+net y-stp-output  => [HMOT](STEPGEN_Y).velocity-cmd
+net y-stp-fb     <=  [HMOT](STEPGEN_Y).position-fb
+net y-enable      => [HMOT](STEPGEN_Y).enable
+
+# Z1 axis StepGen output
+setp [HMOT](STEPGEN_Z1).dirsetup        [JOINT_2]DIRSETUP
+setp [HMOT](STEPGEN_Z1).dirhold         [JOINT_2]DIRHOLD
+setp [HMOT](STEPGEN_Z1).steplen         [JOINT_2]STEPLEN
+setp [HMOT](STEPGEN_Z1).stepspace       [JOINT_2]STEPSPACE
+setp [HMOT](STEPGEN_Z1).position-scale  [JOINT_2]STEP_SCALE
+setp [HMOT](STEPGEN_Z1).step_type       0
+setp [HMOT](STEPGEN_Z1).control-type    1
+setp [HMOT](STEPGEN_Z1).maxaccel        [JOINT_2]STEPGEN_MAXACCEL
+setp [HMOT](STEPGEN_Z1).maxvel          [JOINT_2]STEPGEN_MAXVEL
+setp [HMOT](STEPGEN_Z1).step.invert_output [JOINT_2]STEPGEN_INVERT_STEP
+setp [HMOT](STEPGEN_Z1).direction.invert_output [JOINT_2]STEPGEN_INVERT_DIR
+net z1-stp-output  => [HMOT](STEPGEN_Z1).velocity-cmd
+net z1-stp-fb     <=  [HMOT](STEPGEN_Z1).position-fb
+net z1-enable      => [HMOT](STEPGEN_Z1).enable
+
+# Z2 axis StepGen output
+setp [HMOT](STEPGEN_Z2).dirsetup        [JOINT_3]DIRSETUP
+setp [HMOT](STEPGEN_Z2).dirhold         [JOINT_3]DIRHOLD
+setp [HMOT](STEPGEN_Z2).steplen         [JOINT_3]STEPLEN
+setp [HMOT](STEPGEN_Z2).stepspace       [JOINT_3]STEPSPACE
+setp [HMOT](STEPGEN_Z2).position-scale  [JOINT_3]STEP_SCALE
+setp [HMOT](STEPGEN_Z2).step_type       0
+setp [HMOT](STEPGEN_Z2).control-type    1
+setp [HMOT](STEPGEN_Z2).maxaccel        [JOINT_3]STEPGEN_MAXACCEL
+setp [HMOT](STEPGEN_Z2).maxvel          [JOINT_3]STEPGEN_MAXVEL
+setp [HMOT](STEPGEN_Z2).step.invert_output [JOINT_3]STEPGEN_INVERT_STEP
+setp [HMOT](STEPGEN_Z2).direction.invert_output [JOINT_3]STEPGEN_INVERT_DIR
+net z2-stp-output  => [HMOT](STEPGEN_Z2).velocity-cmd
+net z2-stp-fb     <=  [HMOT](STEPGEN_Z2).position-fb
+net z2-enable      => [HMOT](STEPGEN_Z2).enable

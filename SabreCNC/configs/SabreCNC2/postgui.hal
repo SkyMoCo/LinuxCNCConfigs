@@ -1,0 +1,59 @@
+#################
+### PyVCP HAL ###
+#################
+
+# spindle
+net spindle-rpm-fb-abs  => pyvcp.spindle-rpm
+net spindle-at-speed    => pyvcp.spindle-at-speed
+net spindle-forward     => pyvcp.spindle-forward
+net spindle-reverse     => pyvcp.spindle-reverse
+net spindle-ready       => pyvcp.spindle-ready
+net spindle-fault       => pyvcp.spindle-fault
+net spindle-connected   => pyvcp.spindle-connected
+net spindle-reset      <=  pyvcp.spindle-reset
+#net spindle-fake-fault <=  pyvcp.spindle-fake-fault
+
+# servos
+net x-ready  => pyvcp.servo-x-ready
+net y-ready  => pyvcp.servo-y-ready
+net z1-ready => pyvcp.servo-z1-ready
+net z2-ready => pyvcp.servo-z2-ready
+net x-alarm  => pyvcp.servo-x-alarm
+net y-alarm  => pyvcp.servo-y-alarm
+net z1-alarm => pyvcp.servo-z1-alarm
+net z2-alarm => pyvcp.servo-z2-alarm
+
+# limit/home switches
+net limit-x-neg  => pyvcp.limit-x-neg
+net limit-x-pos  => pyvcp.limit-x-pos
+net limit-y-neg  => pyvcp.limit-y-neg
+net limit-y-pos  => pyvcp.limit-y-pos
+net limit-z1-neg => pyvcp.limit-z1-neg
+net limit-z1-pos => pyvcp.limit-z1-pos
+net limit-z2-neg => pyvcp.limit-z2-neg
+net limit-z2-pos => pyvcp.limit-z2-pos
+
+# probe inputs
+net spindle-probe => pyvcp.spindle-probe
+net tool-probe    => pyvcp.tool-probe
+
+# E-stop cable detection
+net estop-cable-connected => pyvcp.estop-cable-connected
+
+# relay outputs
+net relay-vacuum  <=  pyvcp.relay-vacuum
+net relay-router  <=  pyvcp.relay-router
+net spindle-enable => pyvcp.relay-spindle
+
+# software run time tracker
+setp time.software-running.start true
+net soft-seconds     time.software-running.seconds => pyvcp.soft-time-seconds
+net soft-minutes     time.software-running.minutes => pyvcp.soft-time-minutes
+net soft-hours       time.software-running.hours   => pyvcp.soft-time-hours
+
+# job run time tracker
+net job-timer        time.job-running.start  <=  halui.program.is-running
+net job-timer-pause  time.job-running.pause  <=  halui.program.is-paused
+net job-seconds      time.job-running.seconds => pyvcp.job-time-seconds
+net job-minutes      time.job-running.minutes => pyvcp.job-time-minutes
+net job-hours        time.job-running.hours   => pyvcp.job-time-hours

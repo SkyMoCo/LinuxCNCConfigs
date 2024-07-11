@@ -1,0 +1,79 @@
+##############################################
+### Position PID Loops (modulate velocity) ###
+##############################################
+
+# X Position PID
+setp pid.pos.x.Pgain     [JOINT_0]POS_P
+setp pid.pos.x.Igain     [JOINT_0]POS_I
+setp pid.pos.x.Dgain     [JOINT_0]POS_D
+setp pid.pos.x.bias      [JOINT_0]POS_BIAS
+setp pid.pos.x.FF0       [JOINT_0]POS_FF0
+setp pid.pos.x.FF1       [JOINT_0]POS_FF1
+setp pid.pos.x.FF2       [JOINT_0]POS_FF2
+setp pid.pos.x.deadband  [JOINT_0]POS_DEADBAND
+setp pid.pos.x.maxoutput [JOINT_0]POS_MAX_OUTPUT
+setp pid.pos.x.error-previous-target true
+net x-index-enable <=> pid.pos.x.index-enable
+net x-enable        => pid.pos.x.enable
+net x-pos-cmd       => pid.pos.x.command
+net x-vel-cmd       => pid.pos.x.command-deriv
+net x-pos-fb        => pid.pos.x.feedback
+net x-vel-fb        => pid.pos.x.feedback-deriv
+net x-vel-out       => pid.pos.x.output
+
+# Y Position PID
+setp pid.pos.y.Pgain     [JOINT_1]POS_P
+setp pid.pos.y.Igain     [JOINT_1]POS_I
+setp pid.pos.y.Dgain     [JOINT_1]POS_D
+setp pid.pos.y.bias      [JOINT_1]POS_BIAS
+setp pid.pos.y.FF0       [JOINT_1]POS_FF0
+setp pid.pos.y.FF1       [JOINT_1]POS_FF1
+setp pid.pos.y.FF2       [JOINT_1]POS_FF2
+setp pid.pos.y.deadband  [JOINT_1]POS_DEADBAND
+setp pid.pos.y.maxoutput [JOINT_1]POS_MAX_OUTPUT
+setp pid.pos.y.error-previous-target true
+net y-index-enable <=> pid.pos.y.index-enable
+net y-enable        => pid.pos.y.enable
+net y-pos-cmd       => pid.pos.y.command
+net y-vel-cmd       => pid.pos.y.command-deriv
+net y-pos-fb        => pid.pos.y.feedback
+net y-vel-fb        => pid.pos.y.feedback-deriv
+net y-vel-out       => pid.pos.y.output
+
+# Z1 Position PID
+setp pid.pos.z1.Pgain     [JOINT_2]POS_P
+setp pid.pos.z1.Igain     [JOINT_2]POS_I
+setp pid.pos.z1.Dgain     [JOINT_2]POS_D
+setp pid.pos.z1.bias      [JOINT_2]POS_BIAS
+setp pid.pos.z1.FF0       [JOINT_2]POS_FF0
+setp pid.pos.z1.FF1       [JOINT_2]POS_FF1
+setp pid.pos.z1.FF2       [JOINT_2]POS_FF2
+setp pid.pos.z1.deadband  [JOINT_2]POS_DEADBAND
+setp pid.pos.z1.maxoutput [JOINT_2]POS_MAX_OUTPUT
+setp pid.pos.z1.error-previous-target true
+net z1-index-enable <=> pid.pos.z1.index-enable
+net z1-enable        => pid.pos.z1.enable
+net z1-pos-cmd       => pid.pos.z1.command
+net z1-vel-cmd       => pid.pos.z1.command-deriv
+net z1-pos-fb        => pid.pos.z1.feedback
+net z1-vel-fb        => pid.pos.z1.feedback-deriv
+net z1-vel-out       => pid.pos.z1.output
+
+# Z2 Position PID
+setp pid.pos.z2.Pgain     [JOINT_3]POS_P
+setp pid.pos.z2.Igain     [JOINT_3]POS_I
+setp pid.pos.z2.Dgain     [JOINT_3]POS_D
+setp pid.pos.z2.bias      [JOINT_3]POS_BIAS
+setp pid.pos.z2.FF0       [JOINT_3]POS_FF0
+setp pid.pos.z2.FF1       [JOINT_3]POS_FF1
+setp pid.pos.z2.FF2       [JOINT_3]POS_FF2
+setp pid.pos.z2.deadband  [JOINT_3]POS_DEADBAND
+setp pid.pos.z2.maxoutput [JOINT_3]POS_MAX_OUTPUT
+setp pid.pos.z2.error-previous-target true
+net z2-index-enable <=> pid.pos.z2.index-enable
+net z2-enable        => pid.pos.z2.enable
+net z2-pos-cmd       => pid.pos.z2.command
+net z2-vel-cmd       => pid.pos.z2.command-deriv
+net z2-pos-fb        => pid.pos.z2.feedback
+net z2-vel-fb        => pid.pos.z2.feedback-deriv
+net z2-vel-out       => pid.pos.z2.output

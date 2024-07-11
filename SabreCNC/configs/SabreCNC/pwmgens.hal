@@ -1,0 +1,51 @@
+######################
+### PWMGen Outputs ###
+######################
+
+# NOTE: it looks like we're making the analog outputs go to -10V,
+# but in reality the analog outputs will be 0V when the axis enable
+# signals are off, due to circuit board implementation details
+setp mux2.analog-x.in0  -10.0
+setp mux2.analog-y.in0  -10.0
+setp mux2.analog-z1.in0 -10.0
+setp mux2.analog-z2.in0 -10.0
+net x-torque       => mux2.analog-x.in1
+net y-torque       => mux2.analog-y.in1
+net z1-torque      => mux2.analog-z1.in1
+net z2-torque      => mux2.analog-z2.in1
+net x-enable       => mux2.analog-x.sel
+net y-enable       => mux2.analog-y.sel
+net z1-enable      => mux2.analog-z1.sel
+net z2-enable      => mux2.analog-z2.sel
+net x-analog-out  <=  mux2.analog-x.out
+net y-analog-out  <=  mux2.analog-y.out
+net z1-analog-out <=  mux2.analog-z1.out
+net z2-analog-out <=  mux2.analog-z2.out
+
+# NOTE: PWMGens are always enabled so we can control the
+# output duty cycle to be 0% when they are "disabled"
+# rather than 50%, which "offset mode" wants to do
+setp [HMOT](PWMGEN_X).enable true
+setp [HMOT](PWMGEN_Y).enable true
+setp [HMOT](PWMGEN_Z1).enable true
+setp [HMOT](PWMGEN_Z2).enable true
+setp [HMOT](PWMGEN_X).dither true
+setp [HMOT](PWMGEN_Y).dither true
+setp [HMOT](PWMGEN_Z1).dither true
+setp [HMOT](PWMGEN_Z2).dither true
+setp [HMOT](PWMGEN_X).offset-mode true
+setp [HMOT](PWMGEN_Y).offset-mode true
+setp [HMOT](PWMGEN_Z1).offset-mode true
+setp [HMOT](PWMGEN_Z2).offset-mode true
+setp [HMOT](PWMGEN_X).out0.invert_output true
+setp [HMOT](PWMGEN_Y).out0.invert_output true
+setp [HMOT](PWMGEN_Z1).out0.invert_output true
+setp [HMOT](PWMGEN_Z2).out0.invert_output true
+setp [HMOT](PWMGEN_X).scale [JOINT_0](OUTPUT_SCALE)
+setp [HMOT](PWMGEN_Y).scale [JOINT_1](OUTPUT_SCALE)
+setp [HMOT](PWMGEN_Z1).scale [JOINT_2](OUTPUT_SCALE)
+setp [HMOT](PWMGEN_Z2).scale [JOINT_3](OUTPUT_SCALE)
+net x-analog-out  => [HMOT](PWMGEN_X).value
+net y-analog-out  => [HMOT](PWMGEN_Y).value
+net z1-analog-out => [HMOT](PWMGEN_Z1).value
+net z2-analog-out => [HMOT](PWMGEN_Z2).value

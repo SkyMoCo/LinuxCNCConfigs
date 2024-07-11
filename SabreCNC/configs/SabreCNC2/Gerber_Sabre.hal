@@ -1,0 +1,107 @@
+loadrt [KINS]KINEMATICS
+loadrt [EMCMOT]EMCMOT servo_period_nsec=[EMCMOT]SERVO_PERIOD num_joints=[KINS]JOINTS
+
+loadrt hostmot2
+loadrt hm2_eth board_ip="192.168.1.121" config="num_encoders=4 num_pwmgens=4 num_stepgens=4 sserial_port_0=000000"
+setp [HMOT](CARD0).watchdog.timeout_ns 5000000
+setp [HMOT](CARD0).dpll.01.timer-us -50
+setp [HMOT](CARD0).encoder.timer-number 1
+setp [HMOT](CARD0).stepgen.timer-number 1
+
+loadrt mux2 names=mux2.analog-z2,mux2.analog-z1,mux2.analog-y,mux2.analog-x
+loadrt pid names=pid.pos.x,pid.pos.y,pid.pos.z1,pid.pos.z2,pid.vel.x,pid.vel.y,pid.vel.z1,pid.vel.z2,pid.stepgen.x,pid.stepgen.y,pid.stepgen.z1,pid.stepgen.z2
+loadrt not names=not.spindle-connected
+loadrt or2 names=or2.spindle-faulted
+loadrt timedelay names=timedelay.spindle-at-speed
+loadrt time names=time.software-running,time.job-running
+
+loadusr -Wn saftronics-gp5-vfd ./saftronics_gp5_vfd.py --port /dev/ttyUSB0 --baudrate 9600 --parity even --slave-address 1
+
+addf [HMOT](CARD0).read          servo-thread
+addf motion-command-handler      servo-thread
+addf motion-controller           servo-thread
+addf pid.pos.x.do-pid-calcs      servo-thread
+addf pid.pos.y.do-pid-calcs      servo-thread
+addf pid.pos.z1.do-pid-calcs     servo-thread
+addf pid.pos.z2.do-pid-calcs     servo-thread
+addf pid.vel.x.do-pid-calcs      servo-thread
+addf pid.vel.y.do-pid-calcs      servo-thread
+addf pid.vel.z1.do-pid-calcs     servo-thread
+addf pid.vel.z2.do-pid-calcs     servo-thread
+addf pid.stepgen.x.do-pid-calcs  servo-thread
+addf pid.stepgen.y.do-pid-calcs  servo-thread
+addf pid.stepgen.z1.do-pid-calcs servo-thread
+addf pid.stepgen.z2.do-pid-calcs servo-thread
+addf mux2.analog-x               servo-thread
+addf mux2.analog-y               servo-thread
+addf mux2.analog-z1              servo-thread
+addf mux2.analog-z2              servo-thread
+addf not.spindle-connected       servo-thread
+addf or2.spindle-faulted         servo-thread
+addf timedelay.spindle-at-speed  servo-thread
+addf time.software-running       servo-thread
+addf time.job-running            servo-thread
+addf [HMOT](CARD0).write         servo-thread
+
+# E-stop loopback
+net estop-loop <=  iocontrol.0.user-enable-out
+net estop-loop  => iocontrol.0.emc-enable-in
+
+# tool prepare loopback
+net tool-prepare-loop <=  iocontrol.0.tool-prepare
+net tool-prepare-loop  => iocontrol.0.tool-prepared
+
+# tool change loopback
+net tool-change-loop  <=  iocontrol.0.tool-change
+net tool-change-loop   => iocontrol.0.tool-changed
+
+# TODO: use the "hal_manualtoolchange" component
+#net tool-change-request   iocontrol.0.tool-change      => hal_manualtoolchange.change
+#net tool-change-confirmed iocontrol.0.tool-changed    <=  hal_manualtoolchange.changed
+#net tool-number           iocontrol.0.tool-prep-number => hal_manualtoolchange.number
+
+# NOTE: Z2 signals are disconnected as the corresponding joint doesn't exist
+# NOTE: limit switches are disabled, since people seem to "need" to travel into them (not my idea!)
+# NOTE: joint "amp-fault-in" might need to be connected differently for aftermarket servo drives
+# NOTE: joint "motor-pos-fb" will need to be changed to "-stp-fb" from "-pos-fb" to run open-loop
+# axis/joint signals
+net x-vel-cmd       <=  joint.0.vel-cmd
+net y-vel-cmd       <=  joint.1.vel-cmd
+net z1-vel-cmd      <=  joint.2.vel-cmd
+#net z2-vel-cmd      <=  joint.3.vel-cmd
+net x-pos-cmd       <=  joint.0.motor-pos-cmd
+net y-pos-cmd       <=  joint.1.motor-pos-cmd
+net z1-pos-cmd      <=  joint.2.motor-pos-cmd
+#net z2-pos-cmd      <=  joint.3.motor-pos-cmd
+net x-pos-fb         => joint.0.motor-pos-fb
+net y-pos-fb         => joint.1.motor-pos-fb
+net z1-pos-fb        => joint.2.motor-pos-fb
+#net z2-pos-fb        => joint.3.motor-pos-fb
+net x-ferror        <=  joint.0.f-error
+net y-ferror        <=  joint.1.f-error
+net z1-ferror       <=  joint.2.f-error
+#net z2-ferror       <=  joint.3.f-error
+net x-enable        <=  joint.0.amp-enable-out
+net y-enable        <=  joint.1.amp-enable-out
+net z1-enable       <=  joint.2.amp-enable-out
+#net z2-enable       <=  joint.3.amp-enable-out
+net x-not-ready      => joint.0.amp-fault-in
+net y-not-ready      => joint.1.amp-fault-in
+net z1-not-ready     => joint.2.amp-fault-in
+#net z2-not-ready     => joint.3.amp-fault-in
+net x-index-enable  <=> joint.0.index-enable
+net y-index-enable  <=> joint.1.index-enable
+net z1-index-enable <=> joint.2.index-enable
+#net z2-index-enable <=> joint.3.index-enable
+#net limit-x-neg      => joint.0.neg-lim-sw-in
+#net limit-x-pos      => joint.0.pos-lim-sw-in
+#net limit-y-neg      => joint.1.neg-lim-sw-in
+#net limit-y-pos      => joint.1.pos-lim-sw-in
+#net limit-z1-neg     => joint.2.neg-lim-sw-in
+#net limit-z1-pos     => joint.2.pos-lim-sw-in
+#net limit-z2-neg     => joint.3.neg-lim-sw-in
+#net limit-z2-pos     => joint.3.pos-lim-sw-in
+net limit-x-neg      => joint.0.home-sw-in
+net limit-y-neg      => joint.1.home-sw-in
+net limit-z1-pos     => joint.2.home-sw-in
+#net limit-z2-pos     => joint.3.home-sw-in

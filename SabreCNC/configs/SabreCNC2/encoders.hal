@@ -1,0 +1,47 @@
+######################
+### Encoder Inputs ###
+######################
+
+# X Encoder
+setp [HMOT](ENCODER_X).counter-mode false
+setp [HMOT](ENCODER_X).filter true
+setp [HMOT](ENCODER_X).index-invert false
+setp [HMOT](ENCODER_X).index-mask false
+setp [HMOT](ENCODER_X).index-mask-invert false
+setp [HMOT](ENCODER_X).scale [JOINT_0]ENCODER_SCALE
+net x-pos-fb       <=  [HMOT](ENCODER_X).position
+net x-vel-fb       <=  [HMOT](ENCODER_X).velocity
+net x-index-enable <=> [HMOT](ENCODER_X).index-enable
+
+# Y Encoder
+setp [HMOT](ENCODER_Y).counter-mode false
+setp [HMOT](ENCODER_Y).filter true
+setp [HMOT](ENCODER_Y).index-invert false
+setp [HMOT](ENCODER_Y).index-mask false
+setp [HMOT](ENCODER_Y).index-mask-invert false
+setp [HMOT](ENCODER_Y).scale [JOINT_1]ENCODER_SCALE
+net y-pos-fb       <=  [HMOT](ENCODER_Y).position
+net y-vel-fb       <=  [HMOT](ENCODER_Y).velocity
+net y-index-enable <=> [HMOT](ENCODER_Y).index-enable
+
+# Z1 Encoder
+setp [HMOT](ENCODER_Z1).counter-mode false
+setp [HMOT](ENCODER_Z1).filter true
+setp [HMOT](ENCODER_Z1).index-invert false
+setp [HMOT](ENCODER_Z1).index-mask false
+setp [HMOT](ENCODER_Z1).index-mask-invert false
+setp [HMOT](ENCODER_Z1).scale [JOINT_2]ENCODER_SCALE
+net z1-pos-fb       <=  [HMOT](ENCODER_Z1).position
+net z1-vel-fb       <=  [HMOT](ENCODER_Z1).velocity
+net z1-index-enable <=> [HMOT](ENCODER_Z1).index-enable
+
+# Z2 Encoder
+setp [HMOT](ENCODER_Z2).counter-mode false
+setp [HMOT](ENCODER_Z2).filter true
+setp [HMOT](ENCODER_Z2).index-invert false
+setp [HMOT](ENCODER_Z2).index-mask false
+setp [HMOT](ENCODER_Z2).index-mask-invert false
+setp [HMOT](ENCODER_Z2).scale [JOINT_3]ENCODER_SCALE
+net z2-pos-fb       <=  [HMOT](ENCODER_Z2).position
+net z2-vel-fb       <=  [HMOT](ENCODER_Z2).velocity
+net z2-index-enable <=> [HMOT](ENCODER_Z2).index-enable

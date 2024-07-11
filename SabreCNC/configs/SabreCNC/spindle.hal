@@ -1,0 +1,40 @@
+# LinuxCNC spindle signals
+net spindle-rpm-cmd-abs <=  spindle.0.speed-out-abs
+net spindle-enable      <=  spindle.0.on
+net spindle-forward     <=  spindle.0.forward
+net spindle-reverse     <=  spindle.0.reverse
+net spindle-at-speed     => spindle.0.at-speed
+net spindle-rpm-fb-abs   => spindle.0.speed-in
+net spindle-faulted      => spindle.0.amp-fault-in
+
+# custom driver signals
+#setp saftronics-gp5-vfd.minimum-rpm [SPINDLE_0](MINIMUM_RPM)
+setp saftronics-gp5-vfd.maximum-rpm [SPINDLE_0](MAXIMUM_RPM)
+setp saftronics-gp5-vfd.pole-pair-count [SPINDLE_0](POLE_PAIR_COUNT)
+net spindle-rpm-cmd-abs   => saftronics-gp5-vfd.rpm-in
+net spindle-fake-fault    => saftronics-gp5-vfd.fake-in
+net spindle-reset         => saftronics-gp5-vfd.reset-in
+net spindle-enable        => saftronics-gp5-vfd.enable-in
+net spindle-reverse       => saftronics-gp5-vfd.reverse-in
+net spindle-rpm-fb-abs   <=  saftronics-gp5-vfd.rpm-abs-out
+net spindle-at-speed-raw <=  saftronics-gp5-vfd.at-speed-out
+net spindle-ready         => saftronics-gp5-vfd.ready-out
+net spindle-fault         => saftronics-gp5-vfd.fault-out
+net spindle-connected     => saftronics-gp5-vfd.connected-out
+
+# invert connected to not connected
+net spindle-connected      => not.spindle-connected.in
+net spindle-not-connected <=  not.spindle-connected.out
+
+# combine spindle fault / disconnected signals
+net spindle-fault          => or2.spindle-faulted.in0
+net spindle-not-connected  => or2.spindle-faulted.in1
+net spindle-faulted       <=  or2.spindle-faulted.out
+
+# have a minimum hold time for spindle at speed
+setp timedelay.spindle-at-speed.on-delay 1.0
+setp timedelay.spindle-at-speed.off-delay 0.0
+net spindle-at-speed-raw  => timedelay.spindle-at-speed.in
+net spindle-at-speed     <=  timedelay.spindle-at-speed.out
+
+# TODO maybe use spindle-ready and spindle-not-ready? how is it different?

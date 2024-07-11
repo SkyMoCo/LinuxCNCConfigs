@@ -1,0 +1,75 @@
+#############
+### GPIOs ###
+#############
+
+# limit switch digital inputs
+net limit-x-neg  <= [HMOT](LIMIT_X_NEG).in
+net limit-x-pos  <= [HMOT](LIMIT_X_POS).in
+net limit-y-neg  <= [HMOT](LIMIT_Y_NEG).in
+net limit-y-pos  <= [HMOT](LIMIT_Y_POS).in
+net limit-z1-neg <= [HMOT](LIMIT_Z1_NEG).in
+net limit-z1-pos <= [HMOT](LIMIT_Z1_POS).in
+net limit-z2-neg <= [HMOT](LIMIT_Z2_NEG).in
+net limit-z2-pos <= [HMOT](LIMIT_Z2_POS).in
+
+# probe inputs
+net spindle-probe <= [HMOT](PROBE_SPINDLE).in_not
+net tool-probe    <= [HMOT](PROBE_TOOL).in_not
+
+# E-stop cable detector (to detect if cable is connected)
+net estop-cable-connected <= [HMOT](ESTOP_CABLE).in
+
+# servo drive related digital inputs
+net x-not-ready  <= [HMOT](SERVO_X_READY).in
+net y-not-ready  <= [HMOT](SERVO_Y_READY).in
+net z1-not-ready <= [HMOT](SERVO_Z1_READY).in
+net z2-not-ready <= [HMOT](SERVO_Z2_READY).in
+net x-ready      <= [HMOT](SERVO_X_READY).in_not
+net y-ready      <= [HMOT](SERVO_Y_READY).in_not
+net z1-ready     <= [HMOT](SERVO_Z1_READY).in_not
+net z2-ready     <= [HMOT](SERVO_Z2_READY).in_not
+net x-not-alarm  <= [HMOT](SERVO_X_ALARM).in
+net y-not-alarm  <= [HMOT](SERVO_Y_ALARM).in
+net z1-not-alarm <= [HMOT](SERVO_Z1_ALARM).in
+net z2-not-alarm <= [HMOT](SERVO_Z2_ALARM).in
+net x-alarm      <= [HMOT](SERVO_X_ALARM).in_not
+net y-alarm      <= [HMOT](SERVO_Y_ALARM).in_not
+net z1-alarm     <= [HMOT](SERVO_Z1_ALARM).in_not
+net z2-alarm     <= [HMOT](SERVO_Z2_ALARM).in_not
+
+# servo drive related digital outputs
+setp [HMOT](SERVO_X_ENABLE).is_output true
+setp [HMOT](SERVO_Y_ENABLE).is_output true
+setp [HMOT](SERVO_Z1_ENABLE).is_output true
+setp [HMOT](SERVO_Z2_ENABLE).is_output true
+setp [HMOT](SERVO_X_RESET).is_output true
+setp [HMOT](SERVO_Y_RESET).is_output true
+setp [HMOT](SERVO_Z1_RESET).is_output true
+setp [HMOT](SERVO_Z2_RESET).is_output true
+setp [HMOT](SERVO_X_ENABLE).invert_output true
+setp [HMOT](SERVO_Y_ENABLE).invert_output true
+setp [HMOT](SERVO_Z1_ENABLE).invert_output true
+setp [HMOT](SERVO_Z2_ENABLE).invert_output true
+setp [HMOT](SERVO_X_RESET).invert_output false
+setp [HMOT](SERVO_Y_RESET).invert_output false
+setp [HMOT](SERVO_Z1_RESET).invert_output false
+setp [HMOT](SERVO_Z2_RESET).invert_output false
+net x-enable  => [HMOT](SERVO_X_ENABLE).out
+net y-enable  => [HMOT](SERVO_Y_ENABLE).out
+net z1-enable => [HMOT](SERVO_Z1_ENABLE).out
+net z2-enable => [HMOT](SERVO_Z2_ENABLE).out
+net servo-x-reset   => [HMOT](SERVO_X_RESET).out
+net servo-y-reset   => [HMOT](SERVO_Y_RESET).out
+net servo-z1-reset  => [HMOT](SERVO_Z1_RESET).out
+net servo-z2-reset  => [HMOT](SERVO_Z2_RESET).out
+
+# open drain and relay digital outputs
+setp [HMOT](RELAY_VACUUM).is_output true
+setp [HMOT](RELAY_ROUTER).is_output true
+setp [HMOT](RELAY_SPINDLE).is_output true
+setp [HMOT](RELAY_VACUUM).invert_output true
+setp [HMOT](RELAY_ROUTER).invert_output true
+setp [HMOT](RELAY_SPINDLE).invert_output true
+net relay-vacuum   => [HMOT](RELAY_VACUUM).out
+net relay-router   => [HMOT](RELAY_ROUTER).out
+net spindle-enable => [HMOT](RELAY_SPINDLE).out
