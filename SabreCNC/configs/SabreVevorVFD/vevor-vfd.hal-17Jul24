@@ -10,7 +10,6 @@ net spindle-vel-cmd-rpm => vfdmod.spindle.rpm-in
 net spindle-at-speed <= vfdmod.spindle.at-speed
 net spindle-cw => vfdmod.control.run-forward
 net spindle-ccw => vfdmod.control.run-reverse
-net spindle-error-count <=  vfdmod.rs485.error-count
 
 net spindle-vel-cmd-rps        <=  spindle.0.speed-out-rps
 net spindle-vel-cmd-rps-abs    <=  spindle.0.speed-out-rps-abs

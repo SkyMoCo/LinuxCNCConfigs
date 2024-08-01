@@ -1,7 +1,7 @@
 T1   P1   D+0.250000 Z+11.045623 ;Master Touch Off Tool
 T2   P2   D+0.125000 Z-3.495501 ;1/8 Single Point Router
-T3   P3   D+0.250000 Z-189.501000 ;1/4 Upflute Router Bit
+T3   P3   D+0.250000 Z-189.700814 ;1/4 Upflute Router Bit
 T4   P4   D+0.500000 Z-3.705438 ;1/2 V bit
 T6   P6   D+0.062500 Z-3.904596 ;1/16 Router Bit
-T7   P7   D+0.125000 Z-40.784897 ;1/8 Spiral Upcut Router Bit
+T7   P7   D+0.125000 Z-183.789462 ;1/8 Spiral Upcut Router Bit
 T8   P8   D+1.000000 Z-35.662000 ;1" Flat Surface Bit

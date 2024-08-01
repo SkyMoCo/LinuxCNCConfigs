@@ -41,15 +41,7 @@
           <tablesticky sticky="nsw"/>
           <label><text>"Spindle Coolant"</text></label>
           <led><halpin>"relay-spindle"</halpin><off_color>"gray"</off_color></led>
-          <tablerow/>
-
-          <tablerow/>
-          <label><text>"Communication Errors"</text></label>
-          <s32 anchor="e">
-            <halpin>"spindle-com-errors"</halpin>
-            <font>("Helvetica",12)</font>
-            <format>"04ds"</format>
-          </s32>
+	  
           <tablerow/>
 	</table>
       </labelframe>
@@ -70,6 +62,7 @@
 	  <tablerow/>
           <label><text>"X Ready:"</text></label>
           <led><halpin>"servo-x-ready"</halpin><off_color>"gray"</off_color></led>
+	  <tablerow/>
           <label><text>"X Alarm:"</text></label>
           <led><halpin>"servo-x-alarm"</halpin><on_color>"red"</on_color><off_color>"gray"</off_color></led>
 	</table>

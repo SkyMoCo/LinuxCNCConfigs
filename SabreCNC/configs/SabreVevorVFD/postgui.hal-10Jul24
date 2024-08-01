@@ -14,7 +14,6 @@ net spindle-reverse     => pyvcp.spindle-reverse
 net spindle-connected   => pyvcp.spindle-connected
 #net spindle-reset      <=  pyvcp.spindle-reset
 #net spindle-fake-fault <=  pyvcp.spindle-fake-fault
-net  spindle-error-count => pyvcp.spindle-com-errors 
 
 # servos
 net x-torque => pyvcp.Xvel-cmd
@@ -47,7 +46,7 @@ net estop-cable-connected => pyvcp.estop-cable-connected
 # relay outputs
 net relay-vacuum  <=  pyvcp.relay-vacuum
 net relay-router  <=  pyvcp.relay-router
-#net relay-router motion.digital-out-00
+net relay-router motion.digital-out-00
 net spindle-enable => pyvcp.relay-spindle
 
 # software run time tracker
